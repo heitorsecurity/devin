@@ -59,5 +59,3 @@ class MegaAnfitriao
   mg.diz_ola
   mg.diz_adeus
 end
-  
-  
