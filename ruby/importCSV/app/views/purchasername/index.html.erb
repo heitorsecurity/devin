@@ -1,0 +1,33 @@
+<% flash[:notice] %>
+<table>
+	<thead>
+		<tr>
+			<th>Purchase Name</th>
+			<th>Item Description</th>
+			<th>Item Price</th>
+			<th>Purchase Count</th>
+			<th>Merchant Address</th>
+			<th>Merchant Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @names.each do |name| %>
+			<tr>
+				<td><%= name.purchasername %></td>
+				<td><%= name.itemdescription %></td>
+				<td><%= name.itemprice %></td>
+				<td><%= name.purchasecount %></td>
+				<td><%= name.merchantaddress %></td>
+				<td><%= name.merchantname %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<div>
+
+<h4>Import that data!</h4>
+	<%= form_tag import_names_path, multipart: true do %>
+		<%= file_field_tag :file %>
+		<%= submit_tag "Import CSV" %>
+	<% end %>
+</div>
