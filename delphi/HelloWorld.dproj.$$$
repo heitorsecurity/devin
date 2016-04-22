@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2016/04/21 23:46:32.205,=C:\Users\tmac\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/04/21 23:46:46.627,C:\Users\tmac\Dropbox\Git_Bit\bagunca_aprendendo\delphi\HelloW.pas=C:\Users\tmac\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/04/21 23:46:46.627,C:\Users\tmac\Dropbox\Git_Bit\bagunca_aprendendo\delphi\HelloW.dfm=C:\Users\tmac\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2016/04/21 23:46:51.372,C:\Users\tmac\Dropbox\Git_Bit\bagunca_aprendendo\delphi\HelloWorld.dproj=C:\Users\tmac\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
