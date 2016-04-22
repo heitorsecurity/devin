@@ -8,8 +8,8 @@ uses
 
 type
   TForm1 = class(TForm)
-    Label1: TLabel; // The label we have added
-    Button1: TButton; // The button we have added
+    Label1: TLabel;
+    Button1: TButton;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -26,7 +26,7 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  Label1.Caption := 'Hello World in Delphi'; // Label changed when button is pressed
+  Label1.Caption := 'Hello World in Delphi';
 end;
 
 end.
