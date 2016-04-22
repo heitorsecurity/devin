@@ -23,29 +23,39 @@ Object oLoginDialog is a cWebModalDialog
         End_Object
     End_Object
     
-    Object oRightPanel is a cWebPanel
-        Set peRegion to prRight
-        Set piWidth to 20
-    End_Object
+    //Object oRightPanel is a cWebPanel
+    //    Set peRegion to prRight
+    //    Set piWidth to 20
+    //End_Object
     
     Object oMainPanel is a cWebPanel
         Set peRegion to prCenter
         
         Object oLoginName is a cWebForm
             Set psLabel to "User ID:"
-            Set peLabelPosition to C_WebDefault
-            Set peLabelAlign to alignRight
             Set piMaxLength to 20
-            Set piLabelOffset to 90
+            Set psCSSClass to "login-user"
+            Set pbShowLabel to False
         End_Object
         
         Object oPassword is a cWebForm
             Set psLabel to "Password:"
             Set pbPassword to True
-            Set peLabelAlign to alignRight
             Set piMaxLength to 20
-            Set piLabelOffset to 90
-        End_Object   
+            Set psCSSClass to "login-pass"
+            Set pbShowLabel to False
+        End_Object
+        
+        Object oLoginButton is a cWebButton
+            Set pbShowLabel to False
+            Set psCaption to "Login"
+            Set pbServerOnClick to True
+            Set peLabelAlign to alignCenter
+                        
+            Procedure OnClick
+                Send DoLogin
+            End_Procedure            
+        End_Object        
     End_Object
     
     Object oButtonPanel is a cWebPanel
@@ -59,18 +69,6 @@ Object oLoginDialog is a cWebModalDialog
             Set peAlign to alignCenter
             Set piColumnSpan to 3
         End_Object
-
-        Object oLoginButton is a cWebButton
-            Set pbShowLabel to False
-            Set piColumnIndex to 1
-            Set psCaption to "Login"
-            Set pbServerOnClick to True
-                        
-            Procedure OnClick
-                Send DoLogin
-            End_Procedure            
-        End_Object
-        
     End_Object
     
     Procedure DoLogin
