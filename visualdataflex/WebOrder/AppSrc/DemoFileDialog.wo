@@ -1,0 +1,468 @@
+Use cWebModalDialog.pkg
+Use cWebButton.pkg
+Use cWebTreeView.pkg
+Use cWebImage.pkg
+Use cWebPanel.pkg
+Use cWebList.pkg
+Use cWebColumn.pkg
+
+Define C_FileAttributeDirectory for |CI$0010
+
+// tFileTime
+// ---------
+
+// A 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).
+Struct tFileTime
+    DWord dwLowDateTime    // Low-order part of the file time.
+    DWord dwHighDateTime   // High-order part of the file time.
+End_Struct
+
+// tWin32FindData
+// --------------
+
+// This structure describes a file that the FindFirstFile, FindFirstFileEx, or FindNextFile functions find.
+Struct tWin32FindData
+    DWord     dwFileAttributes                
+    tFileTime ftCreationTime    
+    tFileTime ftLastAccessTime  
+    tFileTime ftLastWriteTime   
+    DWord     nFileSizeHigh
+    DWord     nFileSizeLow
+    DWord     dwReserved0
+    DWord     dwReserved1
+    Char[MAX_PATH] cFileName         
+    Char[14]       cAlternateFileName
+End_Struct
+
+External_Function FindClose "FindClose" Kernel32.dll Handle hOpenFile Returns Integer
+External_Function FindFirstFile "FindFirstFileA" Kernel32.dll String sFileSpec Pointer lpWin32FindData Returns Handle
+External_Function FindNextFile "FindNextFileA" Kernel32.dll Handle hFindFile Pointer lpWin32FindData Returns Handle
+
+Object oDemoFileDialog is a cWebModalDialog
+    Set piColumnCount to 3
+    Set piWidth to 900
+    Set piHeight to 600
+    Set psCaption to "Select folder.." 
+
+    
+    Object oLeftPanel is a cWebPanel
+        Set peRegion to prLeft
+        Set pbResizable to True
+        Set piWidth to 300
+        
+        Object oTreeView is a cWebTreeView
+            Set pbFillHeight to True
+            Property String psStartupPath "C:\Users\Harm\Pictures\"
+//            Send RegisterDownloadFolder of ghoWebResourceManager "C:\Users\Harm\Pictures\"
+            
+            // To fill the tree with items, we implement the OnLoadChildNodes event that is called
+            // by the tree engine. It returns sub tree items based on the parent id, value or the 
+            // current level. In this implementation we look at the file system and generate
+            // items for that.
+            Function OnLoadChildNodes String sId String sValue Integer iLevel Returns tWebTreeItem[]
+                tWebTreeItem[] aItems
+                Integer iCount iDrive iDriveStatus
+                String sLoc sLine
+                
+                String sDirectory sFileName sSize
+                Integer iRow iAttributes iSize iVoid
+                Number nSize
+                Boolean bIsDirectory
+                Pointer lpWin32FindData
+                Handle hFileFind hMoreFiles
+                tWin32FindData Win32FindData
+                
+                Move 0 to iCount
+                
+                If (iLevel = 0) Begin
+                    //  At the root level, we display the drives that are available
+                    For iDrive from 1 to 26
+                        GetDskInfo iDrive iDriveStatus
+                        If (iDriveStatus > Drive_root_not_exist) Begin
+                            Move (Character (iDrive + 64) + ":\") to sLoc
+                            Move sLoc   to aItems[iCount].sName
+                            Move sLoc   to aItems[iCount].sValue        //  Store the full path as value
+                            Move sLoc   to aItems[iCount].sAltText
+                            Move True   to aItems[iCount].bFolder
+                            Move True   to aItems[iCount].bLoadChildren
+                            
+                            //  We need to generate a unique ID here without special characters, since we want to return multiple levels at initialization
+                            Move (Replaces(":", Replaces("\", sLoc, ""), "")) to aItems[iCount].sId
+                            Move sId to aItems[iCount].sParentId
+                            
+                            //  We have different icons for some of the drive types
+                            Case Begin
+                                Case (iDriveStatus = Drive_fixed)
+                                    Move "Images/Harddisk.png" to aItems[iCount].sIcon
+                                    Case Break
+                                Case (iDriveStatus = Drive_cdrom)
+                                    Move "Images/CDRom.png" to aItems[iCount].sIcon
+                                    Case Break
+                                Case (iDriveStatus = Drive_remote)
+                                    Move "Images/NetworkDrive.png" to aItems[iCount].sIcon
+                                    Case Break
+                            Case End
+                            
+                            Increment iCount
+                        End
+                    Loop
+                End
+                Else Begin
+                    
+                    // Test if this is actually a valid directory.... 
+                    Delegate Get IsDirectory sValue to bIsDirectory
+                    
+                    If (bIsDirectory) Begin
+                
+                        // Iterate all the files in this directory....
+                        Move (AddressOf(Win32FindData)) to lpWin32FindData
+                        Move (FindFirstFile(sValue - "*.*", lpWin32FindData)) to hFileFind
+                
+                        If (hFileFind <> -1) Begin
+                            Repeat
+                                Get CharArrayToString Win32FindData.cFileName to sFileName
+                                Move Win32FindData.dwFileAttributes to iAttributes
+                
+                                // Is it a file or a directory?....
+                                If (IsFlagIn(C_FileAttributeDirectory, iAttributes)) Begin
+                                    If (sFileName <> "" and sFileName <> "." and sFileName <> "..") Begin
+                                        Get CharArrayToString Win32FindData.cFileName to sFileName
+                                        Move Win32FindData.dwFileAttributes to iAttributes
+                    
+                                        Move (sValue + sFileName + "\") to sLoc
+                                
+                                        Move sFileName      to aItems[iCount].sName
+                                        Move sLoc           to aItems[iCount].sValue    //  Store the full path as value
+                                        Move sLoc           to aItems[iCount].sAltText
+                                        Move True           to aItems[iCount].bFolder
+                                        Move True           to aItems[iCount].bLoadChildren
+    
+                                        //  We need to generate a unique ID here without special characters, since we want to return multiple levels at initialization
+                                        Move (Replaces(":", Replaces("\", sLoc, ""), "")) to aItems[iCount].sId
+                                        Move sId to aItems[iCount].sParentId
+    
+                                        Increment iCount
+                                    End
+                                End
+                
+                                Move (FindNextFile(hFileFind, lpWin32FindData)) to hMoreFiles
+                            Until (hMoreFiles = 0)
+                
+                            Move (FindClose(hFileFind)) to iVoid
+                        End
+                    End
+                    
+                    
+//                    //  At sub levels we read the contents of the folder and return those as tree items
+//                    Direct_Input ("dir: " + sValue)
+//    
+//                    Repeat
+//                        Readln sLine
+//                        
+//                        Move (Trim(sLine)) to sLine
+//                        
+//                        If (sLine <> "" and sLine <> "[.]" and sLine <> "[..]") Begin
+//                            //  Switch between folders and files
+//                            If (Left(sLine, 1) = "[") Begin
+//                                Move (Mid(sLine, Length(sLine) - 2, 2)) to sLine
+//                                
+//                                Move (sValue + Trim(sLine) + "\") to sLoc
+//                            
+//                                Move (Trim(sLine))  to aItems[iCount].sName
+//                                Move sLoc           to aItems[iCount].sValue    //  Store the full path as value
+//                                Move sLoc           to aItems[iCount].sAltText
+//                                Move True           to aItems[iCount].bFolder
+//                                Move True           to aItems[iCount].bLoadChildren
+//                            End
+//                            Else Begin
+//                                Move (sValue + Trim(sLine)) to sLoc
+//                                
+//                                Move (Trim(sLine))  to aItems[iCount].sName
+//                                Move sLoc           to aItems[iCount].sValue    //  Store the full path as value
+//                                Move sLoc           to aItems[iCount].sAltText
+//                                Move False          to aItems[iCount].bFolder
+//                                Move False          to aItems[iCount].bLoadChildren
+//                            End
+//                            
+//                            //  We need to generate a unique ID here without special characters, since we want to return multiple levels at initialization
+//                            Move (Replaces(":", Replaces("\", sLoc, ""), "")) to aItems[iCount].sId
+//                            Move sId to aItems[iCount].sParentId
+//                            
+//                            Increment iCount
+//                        End
+//                    Until (SeqEof) 
+                End
+                
+                Function_Return aItems
+            End_Function
+            
+            Set pbServerOnSelect to True
+            
+            Procedure OnSelect String sId String sValue Integer iLevel
+
+                
+                // Now Refresh oFileList
+                WebSet psDirectory of oFileList to sValue
+                Send GridRefresh to oFileList
+            End_Procedure
+            
+            
+            //  We override the OnLoad event and manually fill the tree. We need to do this because
+            //  we want to expand it to our initial path and select the current item.
+            Procedure OnLoad
+                tWebTreeItem[] aTree aLevel
+                tWebTreeItem tItem
+                String sPath sCurPath sPart
+                Integer iPos iTo iLevel iItem
+                Boolean bContinue
+                
+                //  Load root level
+                Get OnLoadChildNodes "" "" 0 to aTree
+                
+                Get psStartupPath to sPath
+                Move 0 to iPos
+                Move 0 to iItem
+                Move 1 to iLevel
+                
+                //  Loop through the parts of the path (the different folders)
+                While (iPos < Length(sPath))                    
+                    //  Cut the current folder out of the full path string
+                    Move (Pos("\", sPath, iPos + 1)) to iTo
+                    If (iTo = 0) Begin
+                        Move (Length(sPath)) to iTo
+                    End
+                    Move (Mid(sPath, iTo - iPos, iPos + 1)) to sPart
+                    
+                    If (Trim(sPart) <> "") Begin
+                        Move (Trim(sCurPath) + Trim(sPart)) to sCurPath
+                        Move True to bContinue
+                        
+                        //  Find the folder in the generated tree nodes
+                        While (iItem < SizeOfArray(aTree) and bContinue)
+                            If (aTree[iItem].sValue = sCurPath) Begin
+                                Move aTree[iItem] to tItem
+                                
+                                //  Mark as expanded
+                                Move True to aTree[iItem].bExpanded
+                                
+                                //  Generate the tree nodes for the new level
+                                Get OnLoadChildNodes aTree[iItem].sId aTree[iItem].sValue iLevel to aLevel
+                                Get ConcatArrays aTree aLevel to aTree
+                                
+                                Move False to bContinue
+                            End
+                            
+                            Increment iItem
+                        Loop
+                    End
+                    
+                    Move iTo to iPos
+                    Increment iLevel
+                Loop
+                
+                //  Update the tree with the new nodes
+                Send UpdateSubNodes "" aTree
+                
+                //  Mark the current item as selected
+                If (tItem.sId <> "") Begin
+                    Send Select tItem.sId
+                    
+                End
+            End_Procedure
+            
+            Function ConcatArrays tWebTreeItem[] aMain tWebTreeItem[] aAdd Returns tWebTreeItem[]
+                Integer i iTo
+                
+                Move (SizeOfArray(aAdd) - 1) to iTo
+                For i from 0 to iTo
+                    Move aAdd[i] to aMain[SizeOfArray(aMain)]
+                Loop
+                    
+                Function_Return aMain
+            End_Function
+            
+        End_Object
+        
+        Object oRefresh is a cWebButton
+            Set psCaption to "Refresh"
+            Set pbShowLabel to False
+            Set pbServerOnClick to True
+            
+            Procedure OnClick
+                Forward Send OnClick
+                
+                Send FullRefresh of oTreeView
+            End_Procedure
+        End_Object
+    End_Object
+    
+    Object oCenter is a cWebPanel
+        Set peRegion to prCenter
+
+        Object oCenterPanel is a cWebPanel
+            Set peRegion to prCenter
+        
+            Object oPreview is a cWebImage
+                Set pbFillHeight to True
+                
+                Set pePosition to wiCenter
+                Set pbScroll to True
+                Set pbShowBorder to True
+                Set psUrl to "Images/PoweredByDataFlex.png"
+            End_Object
+        End_Object
+
+        
+        Object oBottomPanel is a cWebPanel
+            Set peRegion to prBottom
+            Set pbResizable to True
+            Set piHeight to 250
+            Set piMinHeight to 200
+            
+            Object oFileList is a cWebList
+                { WebProperty=True }
+                Property String psDirectory ""
+                
+                Set pbFillHeight to True
+                
+                Set pbDataAware to False
+                Set piSortColumn to 0
+                
+                Object oFileName is a cWebColumn
+                    Set psCaption to "File name"
+                    Set piWidth to 10
+                End_Object
+                
+                Object oFileSize is a cWebColumn
+                    Set psCaption to "Size"
+                    Set piWidth to 4
+                End_Object 
+                
+                Procedure OnChangeCurrentRow String sFromRowID String sToRowID
+                    //  If an item is selected in the tree, we want to update the previewer if it is an image.
+                    //  If no image is selected, we reset the previewer to the default image.
+                    String sExt sPath
+                    
+                    WebGet psDirectory to sPath
+                    If (Right(sPath, 1) <> "\") Move (sPath + "\") to sPath
+                    Move (sPath + sToRowID) to sPath
+                    
+                    Move (Lowercase(Trim(Right(sPath, Length(sPath) - RightPos(".", sPath))))) to sExt
+                    If (sExt = "jpg" or sExt = "png" or sExt = "gif" or sExt = "bmp" or sExt = "ico" or sExt = "jpeg" or sExt = "svg") Begin
+                        WebSet psUrl of (oPreview) to ""
+                        
+                        
+                        Send UpdateLocalImage of oPreview sPath
+                    End
+                    Else Begin
+                        WebSet psUrl of (oPreview) to "Images/PoweredByDataFlex.png"
+                    End
+                End_Procedure                
+                
+                
+                
+                Procedure OnManualLoadData tWebRow[] ByRef aTheRows String ByRef sCurrentRowID
+                    String sDirectory sFileName sSize
+                    Integer iRow iAttributes iSize iVoid
+                    Number nSize
+                    Boolean bIsDirectory
+                    Pointer lpWin32FindData
+                    Handle hFileFind hMoreFiles
+                    tWin32FindData Win32FindData
+
+                    Move 0 to iRow
+                    WebGet psDirectory to sDirectory
+                    
+                    // Test if this is actually a valid directory.... 
+                    Delegate Get IsDirectory sDirectory to bIsDirectory
+                    
+                    If (bIsDirectory) Begin
+                        // Iterate all the files in this directory....
+                        Move (AddressOf(Win32FindData)) to lpWin32FindData
+                        Move (FindFirstFile(sDirectory - "*.*", lpWin32FindData)) to hFileFind
+                
+                        If (hFileFind <> -1) Begin
+                            Repeat
+                                Get CharArrayToString Win32FindData.cFileName to sFileName
+                                Move Win32FindData.dwFileAttributes to iAttributes
+                
+                                // Is it a file or a directory?....
+                                If (not(IsFlagIn(C_FileAttributeDirectory, iAttributes))) Begin
+                                    // Get the Size string
+                                    Move Win32FindData.nFileSizeLow to iSize
+                                    If (iSize < 1000) Begin
+                                        Move (String(iSize) * "bytes") to sSize
+                                    End
+                                    Else If (iSize < 1000000) Begin
+                                        Move (iSize / 1000.0) to nSize
+                                        Move (FormatNumber(nSize, 2) * "KB") to sSize
+                                    End
+                                    Else Begin
+                                        Move (iSize / 1000000.0) to nSize
+                                        Move (FormatNumber(nSize, 2) * "MB") to sSize
+                                    End
+                                    
+                                    
+                                    // Populate the row....
+                                    Move sFileName to aTheRows[iRow].sRowID    // RowId
+                                    Move sFileName to aTheRows[iRow].aCells[0].sValue    // File Name
+                                    Move sSize     to aTheRows[iRow].aCells[1].sValue    // File Size 
+                                    If (iRow = 0) Begin
+                                        Move sFileName to sCurrentRowID
+                                        Send OnChangeCurrentRow "" sFileName
+                                    End
+                                    Increment iRow
+                                End
+                
+                                Move (FindNextFile(hFileFind, lpWin32FindData)) to hMoreFiles
+                            Until (hMoreFiles = 0)
+                
+                            Move (FindClose(hFileFind)) to iVoid
+                        End
+                    End
+                    
+                End_Procedure
+            End_Object
+        End_Object
+    End_Object    
+    
+    
+    Set pbServerOnSubmit to True
+    Procedure OnSubmit
+        String sPath sFile
+        
+        WebGet psDirectory of oFileList to sPath
+        If (Right(sPath, 1) <> "\") Move (sPath + "\") to sPath
+        
+        WebGet psCurrentRowID of oFileList to sFile
+        Move (sPath + sFile) to sPath
+        
+        Send ShowInfoBox ("Selected path '" + sPath + "'")
+    End_Procedure
+
+    Function CharArrayToString Char[] ACharArray Returns String
+        // Converts an array of type Char into a DataFlex string. The returned string will not
+        // be null terminated.
+        String sReturn
+        Address pStr
+    
+        Move (AddressOf(ACharArray)) to pStr
+        Move pStr to sReturn         // use built-in DataFlex string address to string conversion
+        Move (CString(sReturn)) to sReturn
+        
+        Function_Return sReturn
+    End_Function
+    
+
+    Function IsDirectory String sPath Returns Boolean
+        // Returns True if the sPath is a directory.
+        Integer iAttributes
+        Move (GetFileAttributes(sPath)) to iAttributes
+        If (iAttributes <> -1) Begin
+            Function_Return  ((iAttributes iand C_FileAttributeDirectory) = C_FileAttributeDirectory)
+        End
+        Function_Return False // File is not a directory (or doesn't exist)
+    End_Function
+End_Object
+
+

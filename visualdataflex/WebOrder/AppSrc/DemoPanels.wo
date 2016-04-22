@@ -1,0 +1,88 @@
+Use cWebView.pkg
+Use cWebForm.pkg
+Use cWebButton.pkg
+Use cWebTabContainer.pkg
+Use cWebTabPage.pkg
+Use cWebPanel.pkg
+Use cWebCombo.pkg
+Use cWebEdit.pkg
+
+Use Customer.DD
+Use SalesP.dd
+Use OrderHea.dd
+Use Vendor.dd
+
+Object oDemoPanels is a cWebView
+    Set piColumnCount to 10
+    Set psCaption to "Panels + Allow Access"
+    Set piWidth to 700
+    Set pbFillHeight to True
+    
+
+    Object oVendor_DD is a Vendor_DataDictionary
+    End_Object 
+
+    Set Main_DD to oVendor_DD
+    Set Server  to oVendor_DD
+
+
+    Object oWebTopPanel is a cWebPanel
+        Set peRegion to prTop
+        Set psBackgroundColor to "#DDDDDD"
+        
+        Set piHeight to 100
+    End_Object 
+    
+    Object oWebLeftPanel is a cWebPanel
+        Set peRegion to prLeft
+        Set psBackgroundColor to "#CCCCCC"
+        
+        Set piWidth to 100
+    End_Object 
+    
+    
+    Object oWebMainPanel is a cWebPanel
+        Set peRegion to prCenter
+        Set psBackgroundColor to "#EEEEEE"
+        
+        Object oForm is a cWebForm
+            Set psLabel to "Form 1"
+            
+        End_Object
+            
+    End_Object 
+    
+    Object oWebRightPanel is a cWebPanel
+        Set peRegion to prRight
+        Set psBackgroundColor to "#BBBBBB"
+        
+        
+        Set piWidth to 100
+    End_Object 
+    
+    Object oWebBottomPanel is a cWebPanel
+        Set peRegion to prBottom
+        Set psBackgroundColor to "#AAAAAA"
+        
+        Set piHeight to 100
+    End_Object 
+    
+    //
+    //  Only administrators should be able to access this view.
+    //
+    Function AllowAccess Returns Boolean
+        Boolean bAccess
+        Integer iUserRights
+        
+        Forward Get AllowAccess to bAccess
+        
+        If (bAccess) Begin
+            Get piUserRights of ghoWebSessionManager to iUserRights
+            
+            If (iUserRights < 1) Begin
+                Move False to bAccess
+            End
+        End
+        Function_Return bAccess
+    End_Function
+End_Object // oCustomer

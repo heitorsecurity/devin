@@ -1,0 +1,535 @@
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg 
+Use cWebTreeView.pkg
+Use cWebCardContainer.pkg
+Use cWebCard.pkg
+Use cWebCheckBox.pkg
+Use cWebRadio.pkg
+Use cWebLabel.pkg
+Use cWebSpacer.pkg
+Use cWebHorizontalLine.pkg
+Use cWebHtmlBox.pkg
+ 
+// Treeview item IDs
+// ~~~~~~~~~~~~~~~~~
+
+// treeview root level categories
+Define C_cfOverview     for 0
+Define C_cfEnvironment  for 10
+Define C_cfEditor       for 20
+Define C_cfCodeExplorer for 30
+Define C_cfDatabase     for 40
+
+// treeview sub-pages
+Define C_cfPage1 for 1
+Define C_cfPage2 for 2
+Define C_cfPage3 for 3
+Define C_cfPage4 for 4
+
+
+Object oDemoTreeViewCards is a cWebView
+    Set piWidth to 700
+    Set piHeight to 550
+    Set psCaption to "Configuration Panel"
+
+    Object oLeftPanel is a cWebPanel
+        Set peRegion to prLeft
+        Set piWidth to 200
+
+        Object oCategoryTree is a cWebTreeView
+            Set pbServerOnSelect to True
+            Set psBackgroundColor to "white" 
+
+            Function OnLoadChildNodes String sId String sValue Integer iLevel Returns tWebTreeItem[]
+                tWebTreeItem[] aItems
+                
+                // Populate Root Level Items
+                // ~~~~~~~~~~~~~~~~~~~~~~~~~
+                If (iLevel = 0) Begin
+                    Move C_cfOverview            to aItems[0].sId
+                    Move sId                     to aItems[0].sParentId
+                    Move "Overview"              to aItems[0].sName
+                    Move False                   to aItems[0].bLoadChildren
+                    Move True                    to aItems[0].bFolder
+                    Move "CssStyle/tvFolder.gif" to aItems[0].sIcon
+                    Move (WebObjectName(oOverviewCard)) to aItems[0].sValue    // Store the Card object name of the card to open
+
+                    Move C_cfEnvironment         to aItems[1].sId
+                    Move sId                     to aItems[1].sParentId
+                    Move "Environment"           to aItems[1].sName
+                    Move True                    to aItems[1].bLoadChildren
+                    Move True                    to aItems[1].bFolder
+                    Move (WebObjectName(oEnvironmentGeneralCard)) to aItems[1].sValue
+                    
+                    Move C_cfEditor              to aItems[2].sId
+                    Move sId                     to aItems[2].sParentId
+                    Move "Editor"                to aItems[2].sName
+                    Move True                    to aItems[2].bLoadChildren
+                    Move True                    to aItems[2].bFolder
+                    Move (WebObjectName(oEditorGeneralCard)) to aItems[2].sValue
+                                               
+                    Move C_cfCodeExplorer        to aItems[3].sId
+                    Move sId                     to aItems[3].sParentId
+                    Move "Code Explorer"         to aItems[3].sName
+                    Move False                   to aItems[3].bLoadChildren
+                    Move True                    to aItems[3].bFolder
+                    Move "CssStyle/tvFolder.gif" to aItems[4].sIcon
+                    Move (WebObjectName(oCodeExplorerCard)) to aItems[3].sValue
+                                               
+                    Move C_cfDatabase            to aItems[4].sId
+                    Move sId                     to aItems[4].sParentId
+                    Move "Database"              to aItems[4].sName
+                    Move False                   to aItems[4].bLoadChildren
+                    Move True                    to aItems[4].bFolder
+                    Move "CssStyle/tvFolder.gif" to aItems[4].sIcon
+                    Move (WebObjectName(oDatabaseCard)) to aItems[4].sValue
+                End
+                Else Begin
+                    // Populate Sub-Pages
+                    // ~~~~~~~~~~~~~~~~~~
+                    Case Begin
+                        Case (sID = C_cfOverview)
+                            Case Break
+                            
+                        Case (sID = C_cfEnvironment)
+                            Move (C_cfEnvironment + C_cfPage1) to aItems[0].sId
+                            Move sId                           to aItems[0].sParentId
+                            Move "General"                     to aItems[0].sName
+                            Move False                         to aItems[0].bLoadChildren
+                            Move False                         to aItems[0].bFolder
+                            Move (WebObjectName(oEnvironmentGeneralCard)) to aItems[0].sValue    // Store the Card object name of the card to open
+
+                            Move (C_cfEnvironment + C_cfPage2) to aItems[1].sId
+                            Move sId                           to aItems[1].sParentId
+                            Move "Window Layout"               to aItems[1].sName
+                            Move False                         to aItems[1].bLoadChildren
+                            Move False                         to aItems[1].bFolder
+                            Move (WebObjectName(oEnvironmentWindowLayoutCard)) to aItems[1].sValue
+                            Case Break
+                            
+                        Case (sID = C_cfEditor)
+                            Move (C_cfEditor + C_cfPage1)      to aItems[0].sId
+                            Move sId                           to aItems[0].sParentId
+                            Move "General"                     to aItems[0].sName
+                            Move False                         to aItems[0].bLoadChildren
+                            Move False                         to aItems[0].bFolder
+                            Move (WebObjectName(oEditorGeneralCard)) to aItems[0].sValue
+
+                            Move (C_cfEditor + C_cfPage2)      to aItems[1].sId
+                            Move sId                           to aItems[1].sParentId
+                            Move "Misc"                        to aItems[1].sName
+                            Move False                         to aItems[1].bLoadChildren
+                            Move False                         to aItems[1].bFolder
+                            Move (WebObjectName(oEditorMiscCard)) to aItems[1].sValue
+                            Case Break
+                            
+                        Case (sID = C_cfCodeExplorer)
+                            Case Break
+                        
+                        Case (sID = C_cfDatabase)
+                            Case Break
+                    Case End
+                End
+                
+                Function_Return aItems
+            End_Function
+
+            Procedure OnSelect String sId String sValue Integer iLevel
+                Handle hoCard
+                
+                Forward Send OnSelect sId sValue iLevel
+                
+                If (sValue <> "") Begin
+                    // Show the card pointed to by sValue
+                    Get WebObjectByName sValue to hoCard
+                    
+                    If (hoCard <> 0) Begin
+                        Send Show to hoCard
+                    End
+                End
+            End_Procedure
+
+            Procedure OnLoad
+                Forward Send OnLoad
+                Send Select C_cfOverview   // select the "Overview" item by default
+            End_Procedure
+ 
+        End_Object       
+    End_Object
+    
+    Object oCenterPanel is a cWebPanel
+        Object oCardContainer is a cWebCardContainer
+            Set pbShowCaption to True
+
+            Object oOverviewCard is a cWebCard
+                Set psCaption to "Overview"
+
+                Object oWebSpacer2 is a cWebSpacer
+                End_Object
+
+                Object oWebHtmlBox1 is a cWebHtmlBox
+                    Set piColumnSpan to 0
+                    Set psHtml to ("This view demonstrates the use of the cWebTreeView control together with cWebCardContainer and cWebCard." ;
+                                 + "<br><br>Web cards are used to stack panels containing other web controls, one on top of another. " ;
+                                 + "This demonstrates a style of configuration dialog where the different configuration pages are selected from a tree view." ;
+                                 + "<br><br>The cWebCardContainer object is used to group cWebCards together. Each cWebCard contains a set of controls to display when that card is shown. " ;
+                                 + "The cWebTreeView is used to represent the cards hierarchically and navigating the tree nodes will change which card is on top." ;
+                                 + "<br><br>Lastly, this view demonstrates how to apply application styles to modify the appearance of the tree view. These application styles are defined in the file 'application.css'." ;
+                                 + "<br><br>The source code for this view can be found in the file 'DemoTreeViewCards.wo'.")
+                End_Object
+            End_Object
+
+            Object oEnvironmentGeneralCard is a cWebCard
+                Set psCaption to "Environment - General"
+
+                Object oWebSpacer2 is a cWebSpacer
+                End_Object
+                
+                Object oWebCheckbox1 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Load Previous Workspace when starting the Studio"
+                End_Object
+                
+                Object oWebCheckbox2 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Open Dashboard when creating a new Workspace"
+                End_Object
+
+                Object oWebCheckbox3 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Show Designer Resolution Grid"
+                End_Object
+
+                Object oWebCheckbox4 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Save/Restore Workspace Desktop"
+                End_Object
+            End_Object
+
+            Object oEnvironmentWindowLayoutCard is a cWebCard
+                Set psCaption to "Environment - Window Layout"
+
+                Object oWebSpacer1 is a cWebSpacer
+                End_Object
+
+                Object oWebRadio1 is a cWebRadio
+                    Set piColumnSpan to 0
+                    Set psCaption to "Tabbed Window Layout"
+                End_Object
+
+                Object oWebRadio2 is a cWebRadio
+                    Set piColumnSpan to 0
+                    Set psCaption to "Multiple Document Interface (MDI) Layout"
+                End_Object
+
+                Object oWebLabel1 is a cWebLabel
+                    Set psCaption to "Note: You must restart the Studio to apply this change."
+                End_Object
+
+                Object oWebCheckbox5 is a cWebCheckbox
+                    Set piColumnSpan to 0
+                    Set psCaption to "Multi-Row Tabbed Windows"
+                End_Object
+            End_Object
+
+            Object oEditorGeneralCard is a cWebCard
+                Set psCaption to "Editor - General"
+
+                Object oWebSpacer1 is a cWebSpacer
+                End_Object
+
+                Object oWebCheckbox1 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Show CodeSense Lists After a Character is Typed"
+                End_Object
+
+                Object oWebCheckbox2 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Always open files in the Editor by default"
+                End_Object
+
+                Object oWebCheckbox3 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Show find-wrapped message"
+                End_Object
+            End_Object
+
+            Object oEditorMiscCard is a cWebCard
+                Set psCaption to "Editor - Settings"
+
+                Object oWebSpacer1 is a cWebSpacer
+                End_Object
+
+                Object oWebCheckbox1 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Smooth scrolling"
+                End_Object
+
+                Object oWebCheckbox2 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Show left margin"
+                End_Object
+
+                Object oWebCheckbox3 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Line tooltips on scroll"
+                End_Object
+
+                Object oWebCheckbox4 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Enable virtual space"
+                End_Object
+
+                Object oWebCheckbox5 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Color syntax highlighting"
+                End_Object
+
+                Object oWebCheckbox6 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Show horizontal scrollbar"
+                End_Object
+
+                Object oWebCheckbox7 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 0
+                    Set psCaption to "One click URL Navigation"
+                End_Object
+
+                Object oWebCheckbox8 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Copy RTF text to clipboard"
+                End_Object
+
+                Object oWebCheckbox9 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 0
+                    Set psCaption to "Brace matching"
+                End_Object
+            End_Object
+
+            Object oCodeExplorerCard is a cWebCard
+                Set psCaption to "Code Explorer"
+                Set piColumnCount to 2
+
+                Object oWebSpacer1 is a cWebSpacer
+                End_Object
+
+                Object oWebCheckbox1 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Classes"
+                End_Object
+
+                Object oWebCheckbox2 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set piColumnIndex to 1
+                    Set psCaption to "Display Import Class Protocols"
+                End_Object
+
+                Object oWebCheckbox3 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Methods"
+                End_Object
+
+                Object oWebCheckbox4 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set piColumnIndex to 1
+                    Set psCaption to "Display ActiveX Resources"
+                End_Object
+
+                Object oWebCheckbox5 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Properties"
+                End_Object
+
+                Object oWebCheckbox6 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set piColumnIndex to 1
+                    Set psCaption to "Display Entry_Item Lists"
+                End_Object
+
+                Object oWebCheckbox7 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Objects"
+                End_Object
+
+                Object oWebCheckbox8 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set piColumnIndex to 1
+                    Set psCaption to "Display Entry_Item Statements"
+                End_Object
+
+                Object oWebCheckbox9 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Uses"
+                End_Object
+
+                Object oWebCheckbox10 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 1
+                    Set piColumnIndex to 1
+                    Set psCaption to "Display External Functions"
+                End_Object
+
+                Object oWebCheckbox11 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Enum_Lists"
+                End_Object
+
+                Object oWebCheckbox12 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 1
+                    Set piColumnIndex to 1
+                    Set psCaption to "Display To Do Items"
+                End_Object
+
+                Object oWebCheckbox13 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Constant Declarations"
+                End_Object
+
+                Object oWebCheckbox14 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Struct Declarations"
+                End_Object
+
+                Object oWebCheckbox15 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Display Legacy Menus"
+                End_Object
+            End_Object
+
+            Object oDatabaseCard is a cWebCard
+                Set psCaption to "Database"
+
+                Object oWebSpacer1 is a cWebSpacer
+                End_Object
+
+                Object oWebHorizontalLine1 is a cWebHorizontalLine
+                End_Object
+
+                Object oWebLabel2 is a cWebLabel
+                    Set psCaption to "Table Explorer:"
+                End_Object
+
+                Object oWebRadio1 is a cWebRadio
+                    Set piColumnSpan to 0
+                    Set psCaption to "Sort by Table Name"
+                End_Object
+
+                Object oWebRadio2 is a cWebRadio
+                    Set piColumnSpan to 0
+                    Set psCaption to "Sort by Table Number"
+                End_Object
+
+                Object oWebHorizontalLine2 is a cWebHorizontalLine
+                End_Object
+
+                Object oWebLabel3 is a cWebLabel
+                    Set psCaption to "Table Editor:"
+                End_Object
+
+                Object oWebCheckbox1 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Never Confirm Saves"
+                End_Object
+
+                Object oWebHorizontalLine3 is a cWebHorizontalLine
+                End_Object
+
+                Object oWebLabel4 is a cWebLabel
+                    Set psCaption to "Data Dictionaries:"
+                End_Object
+
+                Object oWebCheckbox2 is a cWebCheckbox
+                    Set psChecked to "Y"
+                    Set psUnchecked to "N"
+                    Set psValue to "Y"
+                    Set piColumnSpan to 1
+                    Set psCaption to "Use Legacy Data Dictionary Naming Convention"
+                End_Object
+            End_Object
+        End_Object
+    End_Object 
+
+End_Object

@@ -1,0 +1,275 @@
+// C:\Projects\VDF\DataFlex 18.0\Examples\WebOrder\AppSrc\DemoFileUpload.wo
+// DemoFileUpload
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebFileUploadButton.pkg
+Use cWebFileUploadForm.pkg
+Use cWebLabel.pkg
+Use cWebButton.pkg
+Use cWebHorizontalLine.pkg
+
+Use cWebAppUserDataDictionary.dd
+
+Object oDemoFileUpload is a cWebView
+    Set piColumnCount to 10
+    Set psCaption to "File Upload"
+    Set piWidth to 700
+    
+    Procedure CleanUp Integer eMode
+        String sPath
+        
+        If (eMode = cmYes) Begin
+            //  Use default upload folder
+            Get UploadFolder of ghoWebApp True to sPath
+            
+            Move (sPath + "\*.*") to sPath
+            
+            EraseFile sPath
+        End
+    End_Procedure
+    WebPublishProcedure CleanUp
+    
+    Object oWebTopPanel is a cWebPanel
+        Set peRegion to prTop
+        Set piHeight to 160
+        Set psBackgroundColor to "#DDDDDD"
+        Set piColumnCount to 10
+
+        Object oWebLabel1 is a cWebLabel
+            Set piColumnSpan to 0
+            Set psCaption to "File upload form, which has its drop zone expanded to the entire panel (phoDropZone)."
+        End_Object
+        
+        
+        
+        Object oWebFile1 is a cWebFileUploadForm
+            Set piColumnSpan to 0
+            Set psLabel to "File:"
+            
+//            Set pbAutoStart to True 
+    
+            Function OnFileUpload String sFileName Integer iBytes String sMime Returns String
+                String sPath
+                
+                //  Use default upload folder
+                Get UploadFolder of ghoWebApp True to sPath
+                
+                Move (sPath + "\" + sFileName) to sPath
+                
+                Function_Return sPath
+            End_Function
+            
+            Procedure OnFileFinished String sFileName String sLocalPath
+                Send ShowYesNo oDemoFileUpload (RefProc(CleanUp)) (SFormat("Succesfully uploaded %1! Do you want to clear the upload folder?", sFileName)) ("Finished") cmYes
+            End_Procedure
+            
+            Set phoDropZone to oWebTopPanel
+        End_Object
+
+        Object oWebButton1 is a cWebButton
+            Set piColumnSpan to 2
+            Set psCaption to "Show existing file"
+        
+            Procedure OnClick
+                 String sPath
+                
+                //  Determine local path based on workspace setting
+                Get psDataPath of (phoWorkspace(ghoApplication)) to sPath
+                
+                Move (sPath + "\orderdtl.dat") to sPath
+                
+                Send DisplayExistingFile of oWebFile1 sPath
+            End_Procedure
+        End_Object
+        
+        
+        Object oWebButton2 is a cWebButton
+            Set piColumnIndex to 2
+            Set piColumnSpan to 2
+            Set psCaption to "Clear file"
+            
+            Procedure OnClick
+                Send ClearDisplay of oWebFile1
+                
+            End_Procedure
+        End_Object
+    End_Object
+    
+
+    
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 10
+
+        Object oWebLabel5 is a cWebLabel
+            Set piColumnSpan to 0
+            Set psCaption to "File upload form with pbAutoStart set to False and a file filter set to only accept images using psAccept."
+        End_Object
+        
+        
+
+        Object oWebFileUploader2 is a cWebFileUploadForm
+            Set piColumnSpan to 8
+            Set psLabel to "File:"
+            Set psAccept to "image/*,.jpg,.png,.bmp,.gif" // Note that older browsers do not support filtering on mime types
+            Set pbAutoStart to False
+            Set pbShowMime to True
+            
+//            Set pbAutoStart to True 
+            //  Called for each file upload to generate the local path where the file is stored.
+            Function OnFileUpload String sFileName Integer iBytes String sMime Returns String
+                String sPath
+                
+                //  Use default upload folder
+                Get UploadFolder of ghoWebApp True to sPath
+                
+                Move (sPath + "\" + sFileName) to sPath
+                
+                Function_Return sPath
+            End_Function
+            
+            Procedure OnFileFinished String sFileName String sLocalPath
+                Send ShowYesNo oDemoFileUpload (RefProc(CleanUp)) (SFormat("Succesfully uploaded '%1'! Do you want to clear the upload folder?", sLocalPath)) ("Finished") cmYes
+            End_Procedure
+        End_Object
+
+        Object oWebButton3 is a cWebButton
+            Set piColumnSpan to 2
+            Set psCaption to "Start Upload"
+            Set piColumnIndex to 8
+        
+            Procedure OnClick
+                Send StartUpload of oWebFileUploader2
+            End_Procedure
+        End_Object
+
+        Object oWebHorizontalLine4 is a cWebHorizontalLine
+        End_Object
+
+        Object oWebLabel2 is a cWebLabel
+            Set piColumnSpan to 0
+            Set psCaption to "File upload form, which has pbShowDialog set to True, so that the upload process is shown in a modal dialog."
+        End_Object
+
+        Object oWebFileUploadForm1 is a cWebFileUploadForm
+            Set piColumnSpan to 0
+            Set psLabel to "file"
+            Set pbShowDialog to True
+            
+            //  Called for each file upload to generate the local path where the file is stored.
+            Function OnFileUpload String sFileName Integer iBytes String sMime Returns String
+                String sPath
+                
+                //  Use default upload folder
+                Get UploadFolder of ghoWebApp True to sPath
+                
+                Move (sPath + "\" + sFileName) to sPath
+                
+                Function_Return sPath
+            End_Function
+        End_Object
+
+        
+        
+
+        Object oWebHorizontalLine2 is a cWebHorizontalLine
+        End_Object
+
+        Object oWebLabel3 is a cWebLabel
+            Set piColumnSpan to 0
+            Set psCaption to "File upload button, allowing multiple files to be uploaded at once. Shows a log message on the console for every uploaded file after entire upload (all files) is finished."
+        End_Object
+        
+                
+        
+        Object oFileUpload is a cWebFileUploadButton
+            Set piColumnSpan to 3
+            Set psCaption to "Upload File(s)"
+            
+            { WebProperty=True }
+            Property Integer piCount 0
+            
+            
+            Function OnFileUpload String sFileName Integer iBytes String sMime Returns String
+                String sPath
+                
+                //  Use default upload folder
+                Get UploadFolder of ghoWebApp True to sPath
+                
+                Move (sPath + "\" + sFileName) to sPath
+                
+                Function_Return sPath
+            End_Function
+            
+            Procedure OnFileFinished String sFileName String sLocalPath
+                Integer iCount
+                
+                WebGet piCount to iCount
+                Increment iCount
+                WebSet piCount to iCount
+                Send ClientLog (SFormat("File %1 saved as %2", sFileName, sLocalPath))
+            End_Procedure
+            
+            Procedure OnUploadFinished
+                Integer iCount
+                
+                WebGet piCount to iCount
+                WebSet piCount to 0
+                
+                Send ShowYesNo oDemoFileUpload (RefProc(CleanUp)) (SFormat("Succesfully uploaded %1 files! Do you want to delete them?", iCount)) ("Finished") cmYes
+            End_Procedure
+        End_Object
+        
+         Object oWebHorizontalLine3 is a cWebHorizontalLine
+        End_Object
+
+        Object oWebLabel4 is a cWebLabel
+            Set piColumnSpan to 0
+            Set psCaption to "File upload button that allows multiple files to be uploaded at once. Shows a log message on the console for every uploaded file after each file, because pbNotifyIndividualFile is set to True."
+        End_Object
+        
+                
+        
+        Object oFileUploadBtn2 is a cWebFileUploadButton
+            Set piColumnSpan to 3
+            Set psCaption to "Upload File(s)"
+            Set pbNotifyIndividualFile to True
+            
+            { WebProperty=True }
+            Property Integer piCount 0
+            
+            
+            Function OnFileUpload String sFileName Integer iBytes String sMime Returns String
+                String sPath
+                
+                //  Use default upload folder
+                Get UploadFolder of ghoWebApp True to sPath
+                
+                Move (sPath + "\" + sFileName) to sPath
+                
+                Function_Return sPath
+            End_Function
+            
+            Procedure OnFileFinished String sFileName String sLocalPath
+                Integer iCount
+                
+                WebGet piCount to iCount
+                Increment iCount
+                WebSet piCount to iCount
+                Send ClientLog (SFormat("File %1 saved as %2", sFileName, sLocalPath))
+            End_Procedure
+            
+            Procedure OnUploadFinished
+                Integer iCount
+                
+                WebGet piCount to iCount
+                WebSet piCount to 0
+                
+                Send ShowYesNo oDemoFileUpload (RefProc(CleanUp)) (SFormat("Succesfully uploaded %1 files! Do you want to delete them?", iCount)) ("Finished") cmYes
+            End_Procedure
+        End_Object
+        
+    End_Object 
+End_Object 

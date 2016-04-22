@@ -1,0 +1,26 @@
+/* WebList - .DemoCol..
+   ============================
+   The DemoColLow, DemoColMedium and DemoColHigh CSS classes are applied to individual cells of the
+   balance column in the DemoColumnTypes view. This shows how to apply dynamic styling based on the
+   data in the list.
+*/
+#OWEBAPP .DemoColumnBalance.DemoColLow{
+    background-color: red;   
+}
+
+#OWEBAPP .DemoColumnBalance.DemoColMedium{
+    background-color: orange;   
+}
+
+#OWEBAPP .DemoColumnBalance.DemoColHigh{
+    background-color: green;   
+}
+
+/* WebList - .DemoColumnCity
+   ============================
+   This demo shows how to style an individual column. This classname is applied to the City column 
+   of the DemoColumnTypes view.
+*/
+#OWEBAPP .DemoColumnCity{
+   font-weight: bold;
+}

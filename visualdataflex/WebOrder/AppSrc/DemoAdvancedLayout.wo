@@ -1,0 +1,327 @@
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+Use cWebGrid.pkg
+Use cWebColumn.pkg
+Use cWebLabel.pkg
+Use cWebTabContainer.pkg
+Use cWebTabPage.pkg
+Use cWebCombo.pkg
+Use cWebImage.pkg
+
+//Use cContinentDataDictionary.dd
+//Use cCurrencyDataDictionary.dd
+//Use cCountryDataDictionary.dd
+//Use cLanguageDataDictionary.dd
+//Use cLangCountryDataDictionary.dd
+//Use cCountryMainLanguageDataDictionary.dd
+//Use cCountryTLDDataDictionary.dd
+//Use cCountryMainTopLevelDomainDataDictionary.dd
+//Use cTopLevelDomainDataDictionary.dd
+
+Object oDemoAdvancedLayout is a cWebView
+    Set psCaption to "Advanced Layout"
+    Set piWidth to 900
+    Set piMinHeight to 680
+    
+    Set pbClearAfterSave to False    
+    
+
+//    Object oTopLevelDomain_DD is a cTopLevelDomainDataDictionary
+//    End_Object
+//
+//    Object oCountryMainTopLevelDomain_DD is a cCountryMainTopLevelDomainDataDictionary
+//    End_Object
+//
+//    Object oCountryMainLanguage_DD is a cCountryMainLanguageDataDictionary
+//        Set Field_Option Field CountryMainLanguage.Name DD_NOENTER to True
+//    End_Object
+//
+//    Object oContinent_DD is a cContinentDataDictionary
+//        Set Field_Option Field Continent.Name DD_NOENTER to True
+//    End_Object 
+//
+//    Object oCurrency_DD is a cCurrencyDataDictionary
+//        Set Field_Option Field Currency.Name DD_NOENTER to True
+//    End_Object 
+
+//    Object oCountry_DD is a cCountryDataDictionary
+//        Set DDO_Server To oCurrency_DD
+//        Set DDO_Server to oContinent_DD
+//        Set DDO_Server to oCountryMainLanguage_DD
+//        Set DDO_Server to oCountryMainTopLevelDomain_DD
+//        // this lets you save a new parent DD from within child DD
+//        Set Allow_Foreign_New_Save_State to True
+//        
+//        Procedure OnNewCurrentRecord RowID riOldRowId RowID riNewRowId
+//            Handle hoWorkspace
+//            String sPath sFile
+//            
+//            Forward Send OnNewCurrentRecord riOldRowId riNewRowId
+//            
+//            If (not (IsNullRowID (riNewRowId))) Begin
+//                Get phoWorkspace of ghoApplication to hoWorkspace
+//                Get psAppHtmlPath of hoWorkspace to sPath
+//                If (Right (sPath, 1) <> SysConf (SYSCONF_DIR_SEPARATOR)) Begin
+//                    Move (sPath - SysConf (SYSCONF_DIR_SEPARATOR)) to sPath
+//                End
+//                Move (sPath - 'Flags\' + Trim (Country.Flag)) to sFile
+//                Send UpdateLocalImage of oCountryFlagImage sFile
+//                
+//                Move (sPath - 'Maps\' + Trim (Country.Map)) to sFile
+//                Send UpdateLocalImage of oCountryMapImage sFile
+//            End
+//        End_Procedure
+//    End_Object 
+//
+//    Object oCountryTLD_DD is a cCountryTLDDataDictionary
+//        Set DDO_Server to oTopLevelDomain_DD
+//        Set Constrain_file to Country.File_number
+//        Set DDO_Server to oCountry_DD
+//    End_Object
+//
+//    Object oLanguage_DD is a cLanguageDataDictionary
+//        Set Field_Option Field Language.Name DD_NOENTER to True
+//    End_Object 
+//
+//    Object oLanguageCountry_DD is a cLanguageCountryDataDictionary
+//        Set DDO_Server To oCountry_DD
+//        Set DDO_Server To oLanguage_DD
+//        Set Constrain_File To Country.File_Number
+//    End_Object 
+//
+//    Set Main_DD To oCountry_DD
+//    Set Server  To oCountry_DD
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 10
+        
+
+        Object oCountryCode is a cWebForm
+            // Entry_Item Country.Code
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set psLabel to "Code:"
+            Set peLabelAlign to alignRight
+        End_Object
+        
+        Object oCountryName is a cWebForm
+            // Entry_Item Country.Name
+            Set piColumnSpan to 10
+            Set piColumnIndex to 0
+            Set psLabel to "Name:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oCurrencyCode is a cWebForm
+            // Entry_Item Currency.Code
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set psLabel to "Currency:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oCurrencyName is a cWebForm
+            // Entry_Item Currency.Name
+            Set piColumnSpan to 7
+            Set piColumnIndex to 3
+            Set pbShowLabel to False
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oCountryMainLanguageCode is a cWebForm
+            // Entry_Item CountryMainLanguage.Code
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set psLabel to "Main Language:"
+            Set peLabelAlign to alignRight
+        End_Object
+
+        Object oCountryMainLanguageName is a cWebForm
+            // Entry_Item CountryMainLanguage.Name
+            Set piColumnSpan to 7
+            Set piColumnIndex to 3
+            Set pbShowLabel to False
+        End_Object
+
+        Object oContinentCode is a cWebForm
+            // Entry_Item Continent.Code
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set psLabel to "Continent:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oContinentName is a cWebForm
+            // Entry_Item Continent.Name
+            Set piColumnSpan to 7
+            Set piColumnIndex to 3
+            Set pbShowLabel to False
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oCountryCapitalCity is a cWebForm
+            // Entry_Item Country.CapitalCity
+            Set piColumnSpan to 7
+            Set piColumnIndex to 0
+            Set psLabel to "Capital City:"
+            Set peLabelAlign to alignRight
+        End_Object 
+        
+        Object oCountryMainInternetTLD is a cWebForm
+            // Entry_Item CountryMainTopLevelDomain.TLD
+            Set piColumnSpan to 8
+            Set piColumnIndex to 0
+            Set psLabel to "Main Internet TLD:"
+            Set peLabelAlign to alignRight
+        End_Object
+
+        Object oCountryFlag is a cWebForm
+            // Entry_Item Country.Flag
+            Set piColumnSpan to 10
+            Set piColumnIndex to 0
+            Set psLabel to "Flag:"
+            Set peLabelAlign to alignRight
+            Set pbServerOnPrompt to False
+            Set pbPromptButton to True
+            Set pbRequired to True
+        End_Object 
+        
+        Object oCountryMap is a cWebForm
+            // Entry_Item Country.Map
+            Set piColumnSpan to 10
+            Set piColumnIndex to 0
+            Set psLabel to "Map:"
+            Set peLabelAlign to alignRight
+        End_Object 
+        
+        Object oCountryTelephoneCode is a cWebForm
+            // Entry_Item Country.TelephoneCode
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set psLabel to "Telephone Code:"
+            Set peLabelAlign to alignRight
+        End_Object
+        
+        Object oCountryDateFormat is a cWebForm
+            // Entry_Item Country.DateFormat
+            Set piColumnIndex to 3
+            Set piColumnSpan to 4          
+            Set psLabel to "Date Format:"
+            Set peLabelAlign to alignRight
+        End_Object
+        
+        Object oCountryUTCOffset is a cWebForm
+            // Entry_Item Country.UTCOffset
+            Set piColumnSpan to 3
+            Set psLabel to "UTC Offset:"
+            Set peLabelAlign to alignRight
+        End_Object
+        
+        Object oCountryUTCOffsetDST is a cWebForm
+            // Entry_Item Country.UTCOffsetDST
+            Set piColumnIndex to 3
+            Set piColumnSpan to 3
+            Set psLabel to "UTC Offset DST:"
+            Set peLabelAlign to alignRight
+        End_Object
+        
+        Object oCountryDrivesOn is a cWebCombo
+            // Entry_Item Country.DrivesOn
+            Set psLabel to "Drives On:"
+            Set peLabelAlign to alignRight
+            Set piColumnIndex to 6
+            Set piColumnSpan to 4
+        End_Object
+    End_Object
+
+    Object oWebImagesPanel is a cWebPanel
+        Set peRegion to prRight
+        Set piWidth to 300
+        Set psBackgroundColor to "#DDDDDD"
+
+        Object oCountryFlagLabel is a cWebLabel
+            Set peLabelAlign to alignCenter
+            Set psCaption to "Flag"
+        End_Object
+        
+        Object oCountryFlagImage is a cWebImage
+            Set psUrl to "Flags/NoFlag.Jpg"
+            
+            Set pbShowBorder to True
+            Set piHeight to 50
+            Set pbFillHeight to True
+        End_Object         
+    
+        Object oCountryMapLabel is a cWebLabel
+            Set peLabelAlign to alignCenter
+            Set psCaption to "Map"
+        End_Object
+
+        Object oCountryMapImage is a cWebImage
+            Set psUrl to "Maps/NoMap.jpg"
+            
+            Set pbShowBorder to True
+            Set pbFillHeight to True
+        End_Object         
+    End_Object
+        
+    Object oWebBottomPanel is a cWebPanel
+        Set peRegion to prBottom
+        Set psBackgroundColor to "#EEEEEE"
+        
+        Object oTabContainer is a cWebTabContainer
+            Set pbFillHeight to True
+
+            Object oSpokenLanguagesTabPage is a cWebTabPage
+                Set psCaption to "Spoken Languages"
+
+                Object oDetailGrid is a cWebGrid
+//                    Set Server to oLanguageCountry_DD
+                    Set piOrdering to 1
+                    Set piColumnSpan to 10
+                    Set piHeight to 150
+        
+                    Object oLanguageCode is a cWebColumn
+                        // Entry_Item Language.Code
+                        Set psCaption to "Code"
+                        Set piWidth to 100
+                        Set pbSortable to False
+                    End_Object 
+        
+                    Object oLanguageName is a cWebColumn
+                        // Entry_Item Language.Name
+                        Set psCaption to "Name"
+                        Set piWidth to 787
+                        Set pbSortable to False
+                    End_Object 
+                End_Object 
+
+                Object oCountryNumberOfLanguages is a cWebForm
+                    // Entry_Item Country.NumberOfLanguages
+                    Set piColumnIndex to 3
+                    Set psLabel to "Languages#:"
+                    Set peLabelAlign to alignRight
+                End_Object                
+            End_Object 
+
+            Object oInternetTLDsTabPage is a cWebTabPage
+                Set psCaption to "Internet TLDs"
+
+                Object oDetailGrid is a cWebGrid
+//                    Set Server to oCountryTLD_DD
+                    Set piOrdering to 1
+                    Set piColumnSpan to 10
+                    Set piHeight to 150
+        
+                    Object oTLDCode is a cWebColumn
+                        // Entry_Item TopLevelDomain.TLD
+                        Set psCaption to "TLD"
+                        Set piWidth to 100
+                        Set pbSortable to False
+                    End_Object 
+                End_Object
+            End_Object
+        End_Object 
+    End_Object 
+End_Object 

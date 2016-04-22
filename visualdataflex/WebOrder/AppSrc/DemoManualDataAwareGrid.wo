@@ -1,0 +1,121 @@
+// Inventory List
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebGrid.pkg
+Use cWebColumn.pkg
+
+Use Vendor.DD
+Use Invt.DD
+
+
+Object oDemoManualDataAwareGrid is a cWebView
+    Set piColumnCount to 10
+    Set psCaption to "Manual Data Aware Grid"
+    Set piWidth to 750
+    
+
+    Object oVendor_DD is a Vendor_DataDictionary
+    End_Object 
+
+    Object oInvt_DD is a Invt_DataDictionary
+        Set DDO_Server To oVendor_DD
+    End_Object 
+
+    Set Main_DD To oInvt_DD
+    Set Server  To oInvt_DD
+
+    Object oGrid is a cWebGrid 
+        Set piHeight to 500
+        Set pbColumnSortable to True
+        Set peDbGridType to gtManual
+        
+        Object oInvt_Description is a cWebColumn
+            Entry_Item Invt.Description
+            Set psCaption to "Inventory Item"
+            Set piWidth to 75
+            
+            Set pbSortable to True
+        End_Object
+
+        Object oInvt_Vendor_Part_ID is a cWebColumn
+            Entry_Item Invt.Vendor_Part_ID
+            Set psCaption to "Part ID"
+            Set piWidth to 40
+            
+            Set pbSortable to True
+        End_Object
+        
+        Object oVendor_ID is a cWebColumn
+            Entry_Item Vendor.ID
+            Set psCaption to "Vendor"
+            Set piWidth to 30
+            
+            Set pbSortable to True
+        End_Object
+        
+        Object oVendor_Name is a cWebColumn
+            Entry_Item Vendor.Name
+            Set psCaption to "Vendor"
+            Set piWidth to 50
+            
+            Set pbSortable to True
+        End_Object
+        
+        Object oInvt_On_Hand is a cWebColumn
+            Entry_Item Invt.On_Hand
+            Set psCaption to "On Hand"
+            Set piWidth to 20
+            
+            Set pbSortable to True
+        End_Object
+
+        Object oInvt_Unit_Price is a cWebColumn
+            Entry_Item Invt.Unit_Price
+            Set psCaption to "Unit Price"
+            Set piWidth to 30
+            
+            Set pbSortable to True
+        End_Object
+
+
+        Procedure OnManualLoadData tWebRow[] ByRef aTheRows String ByRef sCurrentRowID
+            // Loads the first 10 inventory items.
+            Handle hoDD
+            RowID riRowID 
+            String sRowID
+            Integer iRow
+
+            // Establish the find ordering and find the first record.
+            Move 0 to iRow            
+            Get Server to hoDD
+            Get ReadDDFirstRecord hoDD 1 False to riRowID
+
+            //  Find remaining records....
+            While (Found and (iRow < 10))
+                //  We use the LoadGridRow function to fill the row struct based on the data entry object (DEO) values
+                Get LoadGridRow to aTheRows[iRow]
+                
+                Increment iRow
+                Send Locate_Next to hoDD
+            Loop
+            
+            // Set the first row to be the selected row
+            If (IsNullRowID(riRowID)) Begin
+                Move "" to sCurrentRowID
+            End
+            Else Begin
+                Send FindByRowId of oInvt_DD Invt.File_Number riRowID
+                Move (SerializeRowID(riRowID)) to sCurrentRowID
+            End
+            
+            
+        End_Procedure
+
+        Procedure OnLoad
+            Send GridRefresh
+        End_Procedure
+    End_Object
+
+End_Object 

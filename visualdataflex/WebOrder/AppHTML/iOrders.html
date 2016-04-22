@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web Order Entry 18.2</title>
+
+<link rel="shortcut icon" href="favicon.ico" sizes="48x48" />
+
+<!-- DataFlex Engine -->
+<script>
+//  Uncomment the following line to optimize the initialization (make sure that the right theme is set)
+//var sDfPreloadTheme = "Df_Web_Creme";
+</script>
+
+<script src="DfEngine/df-include.js"></script>
+
+<!-- DataFlex Custom Controls (do not remove this line, used for automatic insertion) -->
+
+
+<!-- Initialization of the WebApp -->
+<script>
+var oWebApp = new df.WebApp("WebServiceDispatcher.wso");
+
+oWebApp.displayApp("#viewport");
+</script>
+
+<style>
+html, body{
+    height: 700px;
+    width: 850px;
+}
+.BrandLogo {
+    margin-left: 5px;
+}
+.WebMenuBar > ul > li.BrandTextRight {
+    float: right;
+}
+
+</style>
+</head>
+
+<body class="WebApp WebContainer">
+    <div style='width:100%; height:70px;'>
+        <img src="iOrders_Brand.png"/> 
+    </div>
+  
+    <div id="viewport" style="width: 100%; height: 600px;">
+    </div>
+  
+    <div style='width:100%; height: 30px;'>
+        <div class="WebMenuBar" style="height: 30px">
+            <ul>
+                <li><div><a>iOrders - Web Order Entry System</a></div></li>
+                <li class="BrandTextRight"><div><a>powered by DataFlex</a></div></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

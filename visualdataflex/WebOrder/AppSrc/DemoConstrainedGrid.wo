@@ -1,0 +1,167 @@
+Use cWebView.pkg
+Use cWebForm.pkg
+Use cWebCombo.pkg
+Use cWebButton.pkg
+Use cWebGrid.pkg
+Use cWebColumn.pkg
+Use cWebColumnCombo.pkg
+Use cWebColumnCheckbox.pkg
+Use cWebPanel.pkg
+Use Customer.DD
+
+
+Object oDemoConstrainedGrid is a cWebView
+    Object oCustomer_DD is a Customer_DataDictionary
+        Set Auto_Fill_State to True
+
+        Procedure OnConstrain
+            String sFilter sFrom sTo
+            Forward Send OnConstrain
+            
+            WebGet psFilter of oDemoConstrainedGrid to sFilter
+            WebGet psFilterFrom of oDemoConstrainedGrid to sFrom
+            WebGet psFilterTo of oDemoConstrainedGrid to sTo
+            
+            If (sFilter = "NUMBER") Begin
+                Constrain Customer.Customer_Number Between sFrom and sTo
+            End
+            
+            If (sFilter = "NAME") Begin
+                Constrain Customer.Name Between sFrom and sTo
+            End
+            
+        End_Procedure
+    End_Object
+
+    Set Main_DD to oCustomer_DD
+    Set Server to oCustomer_DD
+    
+    Set psCaption to "Constrained Grid"
+    
+    //  Web Properties used to store constraint values
+    { WebProperty = True }
+    Property String psFilter ""
+    { WebProperty = True }
+    Property String psFilterFrom ""
+    { WebProperty = True }
+    Property String psFilterTo ""
+    
+    //  Fill the grid on load
+    Procedure OnLoad
+        Send Find of oCustomer_DD FIRST_RECORD Index.1
+    End_Procedure
+    
+    Object oTopPanel is a cWebPanel
+        Set peRegion to prTop
+        Set piColumnCount to 4
+        
+        Object oFilterCombo is a cWebCombo
+            Set psLabel to "Filter on:"
+            
+            Procedure OnFill
+                Forward Send OnFill
+                
+                Send AddComboItem "" "None"
+                Send AddComboItem "NUMBER" "Number"
+                Send AddComboItem "NAME" "Name"
+            End_Procedure
+        End_Object
+        
+        Object oFromForm is a cWebForm
+            Set piColumnIndex to 1
+            Set psLabel to "From:"
+        End_Object
+        
+        Object oToForm is a cWebForm
+            Set piColumnIndex to 2
+            Set psLabel to "To:"
+        End_Object
+        
+        Object oUpdate is a cWebButton
+            Set psCaption to "Update"
+            Set piColumnIndex to 3
+            
+            Set pbServerOnClick to True
+            Procedure OnClick
+                String sVal
+                
+                WebGet psValue of oFilterCombo to sVal
+                WebSet psFilter of oDemoConstrainedGrid to sVal
+                
+                WebGet psValue of oFromForm to sVal
+                WebSet psFilterFrom of oDemoConstrainedGrid to sVal
+                
+                WebGet psValue of oToForm to sVal
+                WebSet psFilterTo of oDemoConstrainedGrid to sVal
+                
+                Send Rebuild_Constraints of oCustomer_DD
+
+                // make sure buffer has correct (old) record
+                // and rebuild list around valid record close to this one
+                Send Refind_Records of oCustomer_DD
+                Send FindDDRecordInBuffer of oList
+            End_Procedure
+        End_Object
+    End_Object
+    
+    Object oMainPanel is a cWebPanel
+        Set peRegion to prCenter
+            
+        
+        Object oList is a cWebGrid
+            Set pbFillHeight to True
+            Set pbShowLabel to False
+            Set piOrdering to 1
+            
+            Object oCustomerNumber is a cWebColumn
+                Set piWidth to 10
+                Set psCaption to "Number"
+                Set pbPromptButton to False
+                
+                Entry_Item Customer.Customer_Number
+            End_Object
+            
+            Object oCustomerName is a cWebColumn
+                Set piWidth to 20
+                Set psCaption to "Name"
+                Set pbPromptButton to False
+                
+                Entry_Item Customer.Name
+            End_Object
+            
+            Object oCustomerAddress is a cWebColumn
+                Set piWidth to 20
+                Set psCaption to "Address"
+                
+                Entry_Item Customer.Address 
+            End_Object
+            
+            Object oCustomerState is a cWebColumnCombo
+                Set piWidth to 14
+                Set psCaption to "State"
+                
+                Entry_Item Customer.State
+            End_Object
+            
+            Object oCustomerStatus is a cWebColumnCheckbox
+                Set piWidth to 8
+                Set psCaption to "Status"
+                                
+                Entry_Item Customer.Status
+            End_Object
+            
+            Object oCalculated is a cWebColumn
+                Set piWidth to 6
+                Set psCaption to "Calc"
+                Set pbEnabled to False
+                
+                //  The OnSetCalculatedValue procedure can be used on any data entry object (DEO)
+                Procedure OnSetCalculatedValue String ByRef sValue
+                    Move ("$" + string(Customer.Credit_Limit)) to sValue
+                End_Procedure
+            End_Object
+        End_Object
+    End_Object
+End_Object
+
+

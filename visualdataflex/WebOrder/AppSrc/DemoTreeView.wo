@@ -1,0 +1,213 @@
+Use cWebView.pkg
+Use cWebForm.pkg
+Use cWebLabel.pkg
+Use cWebTreeView.pkg
+
+Use Vendor.DD
+Use Invt.DD
+Use cWebSpacer.pkg
+Use cWebHorizontalLine.pkg
+
+
+Object oDemoTreeView is a cWebView
+    Set psCaption to "TreeView + OnSyncView"
+    Set piColumnCount to 3
+    Set pbClearAfterSave to False
+     
+    Object oVendor_DD is a Vendor_DataDictionary
+    End_Object // oVendor_DD
+
+    Object oInvt_DD is a Invt_DataDictionary
+        Set DDO_Server to oVendor_DD
+        
+        Procedure Creating
+            Forward Send Creating
+            
+            tWebTreeItem tNode
+            
+            //  Add tree item for the item
+            Move (Trim(Invt.Item_ID))               to tNode.sName
+            Move (Trim(Invt.Description))           to tNode.sAltText
+            Move (Trim(Invt.Item_ID))               to tNode.sId
+            Move (Trim(Vendor.ID))                  to tNode.sParentId
+            Move False                              to tNode.bLoadChildren
+            Move False                              to tNode.bFolder
+            
+            Send InsertNode of oItemsTree tNode
+        End_Procedure
+        
+        Procedure Deleting
+            String sId
+            
+            Move (Trim(Invt.Item_ID)) to sId
+            
+            Forward Send Deleting
+            
+            //  Remove node from tree
+            Send RemoveNode of oItemsTree sId
+        End_Procedure
+        
+        Procedure Update
+            Forward Send Update
+            
+            tWebTreeItem tNode
+            
+            //  Update item in tree
+            Move (Trim(Invt.Item_ID))               to tNode.sName
+            Move (Trim(Invt.Description))           to tNode.sAltText
+            Move (Trim(Invt.Item_ID))               to tNode.sId
+            Move (Trim(Vendor.ID))                  to tNode.sParentId
+            Move False                              to tNode.bLoadChildren
+            Move False                              to tNode.bFolder
+            
+            Send UpdateNode of oItemsTree tNode
+        End_Procedure
+    End_Object // oInvt_DD
+
+    Set Main_DD to oInvt_DD
+    Set Server  to oInvt_DD
+
+    Object oLeftPanel is a cWebPanel
+        Set peRegion to prLeft
+        Set piWidth to 400
+        Set piMinWidth to 100
+        Set pbResizable to True
+            
+        Object oItemsTree is a cWebTreeView
+            Set pbServerOnSelect to True
+            Set psLabel to "Tree"
+            
+            Procedure OnSelect String sId String sValue Integer iLevel
+                If (iLevel = 1) Begin
+                    Send Clear of oInvt_DD
+                    Move sId to Vendor.ID
+                    Send Find of oVendor_DD EQ Index.1
+                End
+                
+                If (iLevel = 2) Begin
+                    Move sId to Invt.Item_ID
+                    Send Find of oInvt_DD EQ Index.1
+                End
+            End_Procedure
+            
+            
+            Function OnLoadChildNodes String sId String sValue Integer iLevel returns tWebTreeItem[]
+                tWebTreeItem[] aItems
+                tWebTreeItem tItem
+                Integer iCount
+                
+                Move 0 to iCount
+                
+                If (iLevel = 0) Begin   //  At the first level we will show the vendors
+                    //  Loop through vendors (use Request_Read so we don't change the current record of the DDO)
+                    Send Request_Read of oVendor_DD FIRST_RECORD Vendor.File_Number Index.1
+                    While (Found)
+                        
+                        //  Add tree item for the vendor
+                        Move (Trim(Vendor.Name))                to aItems[iCount].sName
+                        Move (Trim(Vendor.ID))                  to aItems[iCount].sId
+                        Move True                               to aItems[iCount].bLoadChildren
+                        Move True                               to aItems[iCount].bFolder
+//                        Move (SerializeRowID(GetRowID(Vendor))) to aItems[iCount].sValue
+                                                
+                        Increment iCount                        
+                        Send Locate_Next to oVendor_DD
+                    Loop
+                End
+                
+                If (iLevel = 1) Begin
+                    
+                    Clear Invt
+                    
+                    Move sId to Invt.Vendor_ID
+                    Find GT Invt by Index.2
+                    
+                    
+                    
+                    While (Found and Trim(Invt.Vendor_ID) = sId)
+                        
+                        //  Add tree item for the item
+                        Move (Trim(Invt.Item_ID))               to aItems[iCount].sName
+                        Move (Trim(Invt.Description))           to aItems[iCount].sAltText
+                        Move (Trim(Invt.Item_ID))               to aItems[iCount].sId
+                        Move False                              to aItems[iCount].bLoadChildren
+                        Move False                              to aItems[iCount].bFolder
+                        
+                        Increment iCount
+                        Find GT invt by Index.2
+                    Loop
+                    
+                End
+                
+                Function_Return aItems
+            End_Function
+        End_Object
+    End_Object
+    
+    Object oCenterPanel is a cWebPanel
+        Set peRegion to prCenter
+        Set piColumnCount to 2
+        Set piMinWidth to 400
+        
+        Object oItem_ID is a cWebForm
+            Set psLabel to "Invt. Item ID"
+            Entry_Item Invt.Item_ID
+            
+        End_Object // oInvtItem_ID
+    
+        Object oDescription is a cWebForm
+            Set psLabel to "Invt. Description"
+            Set piColumnSpan to 2
+            Entry_Item Invt.Description
+            
+            Set psValue to "Hi there!"
+        End_Object // oInvtDescription
+
+        Object oDevider1 is a cWebHorizontalLine
+        End_Object
+        
+    
+        Object oVendorID is a cWebForm
+            Set psLabel to "Vendor ID"
+            Entry_Item Vendor.ID
+        End_Object // oVendorID
+    
+        Object oVendorName is a cWebForm
+            Set psLabel to "Vendor Name"
+            Set piColumnSpan to 2
+            Entry_Item Vendor.Name
+        End_Object // oVendorName
+    
+        Object oInvtVendor_Part_ID is a cWebForm
+            Set psLabel to "Vendor Part ID"
+            Entry_Item Invt.Vendor_Part_ID
+        End_Object // oInvtVendor_Part_ID
+        
+        Object oDevider2 is a cWebHorizontalLine
+        End_Object
+        
+        Object oInvtUnit_Price is a cWebForm
+            Set psLabel to "Unit Price"
+            Entry_Item Invt.Unit_Price
+        End_Object // oInvtUnit_Price
+    
+        Object oInvtOn_Hand is a cWebForm
+            Set psLabel to "On Hand"
+            Set piColumnIndex to 1
+            Entry_Item Invt.On_Hand
+        End_Object // oInvtOn_Hand
+    End_Object
+    
+    //
+    //  Only administrators should be able to save in this view.
+    //
+    Procedure OnSyncView
+        Integer iUserRights
+        Get piUserRights of ghoWebSessionManager to iUserRights
+        
+        Set Read_Only_State of oVendor_DD to (iUserRights <= 0)
+        Set Read_Only_State of oInvt_DD to (iUserRights <= 0)
+    End_Procedure
+End_Object
+
+

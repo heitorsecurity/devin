@@ -1,0 +1,566 @@
+Use AllWebAppClasses.pkg
+Use WebAppBase.pkg
+Use cWebMenuBar.pkg
+Use cWebToolbar.pkg
+Use cWebCommandbar.pkg
+Use cWebPanel.pkg
+Use cWebButton.pkg
+Use cWebMenuItem.pkg
+Use cWebMenuItemLoadView.pkg
+
+Object oApplication is a cApplication
+End_Object
+
+Object oWebApp is a cWebApp
+    Set psTheme to "Df_Flat_Desktop"
+//    Set peLoginMode to lmLoginNone
+
+// this will do a manual login
+//    Procedure OnLoad
+//        Boolean bOk
+//        Get UserLogin of ghoWebSessionManager "john" "John" to bOk
+//    End_Procedure
+
+    Object oCommandbar is a cWebCommandBar
+        
+        Object oMenuBar is a cWebMenuBar
+            Object oFileMenu is a cWebMenuItem
+                Set psCaption to "File"
+                
+                Object oClearMenuItem is a cWebMenuClear
+                End_Object  
+                             
+                Object oClearAllMenuItem is a cWebMenuClearAll
+                End_Object  
+                
+                Object oPromptMenuItem is a cWebMenuPrompt
+                    Set pbBeginGroup to True
+                End_Object  
+                               
+                Object oFindMenuItem is a cWebMenuFind
+                End_Object  
+
+                Object oNextMenuItem is a cWebMenuFindNext
+                End_Object  
+
+                Object oPreviousMenuItem is a cWebMenuFindPrevious
+                End_Object  
+                
+                Object oLastMenuItem is a cWebMenuFindLast
+                End_Object                
+                                
+                Object oFirstMenuItem is a cWebMenuFindFirst
+                End_Object  
+                
+                Object oSaveMenuItem is a cWebMenuSave
+                    Set pbBeginGroup to True
+                End_Object  
+                
+                Object oDeleteMenuItem is a cWebMenuDelete
+                End_Object  
+                
+                Object oLoginMenuItem is a cWebMenuItem
+                    Set psCaption to "Log In"
+                    Set pbBeginGroup to True
+                    Set psCSSClass to "WebLoginMenuItem"
+
+                    Procedure OnClick
+                        Send RequestLogin to ghoWebSessionManager
+                    End_Procedure
+                    
+                    Procedure OnLoad
+                        Integer eLoginMode
+                        Handle hoLogin
+                        Get GetLoginView to hoLogin
+                        Get peLoginMode to eLoginMode
+                        WebSet pbRender to  (hoLogin and eLoginMode<>lmLoginNone)
+                    End_Procedure  // OnLoad
+                    
+                End_Object  
+
+                Object oLogoutMenuItem is a cWebMenuItem
+                    Set psCaption to "Log Out"
+                    Set psCSSClass to "WebLogoutMenuItem"
+
+                    Procedure OnClick
+                        Send RequestLogOut of ghoWebSessionManager
+                    End_Procedure
+
+                    Procedure OnLoad
+                        Integer eLoginMode
+                        Handle hoLogin
+                        Get GetLoginView to hoLogin
+                        Get peLoginMode to eLoginMode
+                        WebSet pbRender to  (hoLogin and eLoginMode<>lmLoginNone)
+                    End_Procedure  // OnLoad
+                End_Object  
+            End_Object  
+    
+            Object oViewMenu is a cWebMenuItem
+                Set psCaption to "Views"
+                
+                Object oCustomerMaintenanceMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Customer Maintenance"
+                    Set psLoadViewOnClick to "oCustomer" 
+                End_Object
+
+                Object oOrderEntryMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Order Entry"
+                    Set psLoadViewOnClick to "oOrder"
+                End_Object
+
+                Object oInventoryMaintenanceMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Inventory Maintenance"
+                    Set psLoadViewOnClick to "oInventory"
+                End_Object
+
+                Object oVendorMaintenanceMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Vendor Maintenance"
+                    Set psLoadViewOnClick to "oVendor"
+                End_Object
+
+                Object oSalesPersonMaintenanceMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Sales Person Maintenance"
+                    Set psLoadViewOnClick to "oSalesPerson"
+                End_Object
+            End_Object
+            
+            Object oReportMenu is a cWebMenuItem
+                Set psCaption to "Reports"
+                
+                    
+                Object oCustomerListMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Customer List"
+                    Set psLoadViewOnClick to "oCustomerListSample"
+                End_Object
+
+                Object oOrderListMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Order List"
+                    Set psLoadViewOnClick to "oOrderListSample"
+                End_Object
+
+                Object oCustomerOrdersMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Customer Orders"
+                    Set psLoadViewOnClick to "oCustomerOrdersSample"
+                End_Object  
+
+                Object oVRW_LiveMenuItem is a cWebMenuItem
+                    Set psCaption to "DataFlex Report Writer (Live)"
+                    Set pbBeginGroup to True
+                    Set psToolTip to "Opens a URL to a DataFlex Report Writer live demonstration."
+
+                    Procedure OnClick
+                        Forward Send OnClick 
+                        Send NavigateToPage "http://www.dataaccess.com/livevisualreportwriter" btNewTab
+                    End_Procedure
+                End_Object
+
+                Object oDAI_LiveMenuItem is a cWebMenuItem
+                    Set psCaption to "Dynamic AI (Live)"
+                    Set psToolTip to "Opens a URL to a Dynamic AI live demonstration."
+
+                    Procedure OnClick
+                        Forward Send OnClick
+                        Send NavigateToPage "http://www.dataaccess.com/livedynamicai" btNewTab
+                    End_Procedure
+                End_Object
+                
+            End_Object
+                
+            Object oDemoMenu is a cWebMenuItem
+                Set psCaption to "Demo"
+
+                Object oCardsMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Cards"
+                    Set psLoadViewOnClick to "oDemoCards"
+                End_Object
+
+                Object oDemoColumnTypesMenuItem1 is a cWebMenuItemLoadView
+                    Set psCaption to "Column Types"
+                    Set psLoadViewOnClick to "oDemoColumnTypes"
+                End_Object
+
+                Object oConstrainedGridMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Constrained Grid"
+                    Set psLoadViewOnClick to "oDemoConstrainedGrid"
+                End_Object
+
+                Object oDialogsMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Dialogs"
+                    Set psLoadViewOnClick to "oDemoDialogs"
+                End_Object
+                
+                Object oDemoFileUploadMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "File Upload"
+                    Set psLoadViewOnClick to "oDemoFileUpload"
+                End_Object
+                
+                Object oManualDataAwareGridMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Manual Data Aware Grid"
+                    Set psLoadViewOnClick to "oDemoManualDataAwareGrid"
+                End_Object
+
+                Object oManualGridMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Manual Grid"
+                    Set psLoadViewOnClick to "oDemoManualGrid"
+                End_Object
+
+                Object oMultiDDOStructureMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Multi DDO Structure"
+                    Set psLoadViewOnClick to "oDemoMultiDDOStructure"
+                End_Object
+
+                Object oPanelsMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Panels + Allow Access"
+                    Set psLoadViewOnClick to "oDemoPanels"
+                End_Object
+
+                Object oSlidersMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Sliders"
+                    Set psLoadViewOnClick to "oDemoSliders"
+                End_Object
+
+                Object oSubMenuItem is a cWebMenuItem
+                    Set psCaption to "Submenu"
+
+                    Object oSameWindowMenuItem is a cWebMenuItem
+                        Set psCaption to "Order.html (Same window)" 
+                        Set psImage to "Images/Order.png"
+                        
+                        Procedure OnClick
+                            Send NavigateToPage "Order.html" btCurrentWindow
+                        End_Procedure
+                    End_Object
+                    
+                    
+                    Object oSameNewTabMenuItem is a cWebMenuItem
+                        Set psCaption to "Order.html (New tab)" 
+                        Set psImage to "Images/Order.png"
+                        
+                        Procedure OnClick
+                            Send NavigateToPage "Order.html" btNewTab
+                        End_Procedure
+                    End_Object
+                    
+                    Object oSameNewWindowMenuItem is a cWebMenuItem
+                        Set psCaption to "Order.html (New window)" 
+                        Set psImage to "Images/Order.png"
+                        
+                        Procedure OnClick
+                            Send NavigateNewWindow "Order.html" 800 600
+                        End_Procedure
+                    End_Object
+            
+                    Object oGoogleSameWindowMenuItem is a cWebMenuItem
+                        Set psCaption to "Google.com (Same window)" 
+                        
+                        Procedure OnClick
+                            Send NavigateToPage "http://www.google.com/" btCurrentWindow
+                        End_Procedure
+                    End_Object
+                End_Object
+                
+                Object oSuggestionFormMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "Suggestion Form"
+                    Set psLoadViewOnClick to "oDemoSuggestionForm"
+                End_Object
+
+                Object oTreeViewOnSyncViewMenuItem is a cWebMenuItemLoadView
+                    Set psCaption to "TreeView + OnSyncView"
+                    Set psLoadViewOnClick to "oDemoTreeView"
+                End_Object
+
+                Object oConfigurationPanelMenuItem1 is a cWebMenuItemLoadView
+                    Set psCaption to "TreeView + Cards"
+                    Set psLoadViewOnClick to "oDemoTreeViewCards"
+                End_Object
+
+            End_Object              
+            
+            Object oThemesMenu is a cWebMenuItem
+                Set psCaption to "Themes"
+
+                Object oModernSky is a cWebMenuItem
+                    Set psCaption to "Modern Sky"
+                    
+                    Procedure OnClick 
+                        //  Change the theme at runtime
+                        WebSet psTheme of oWebApp to "Df_Modern_Sky"
+                        
+                        //  Update menu
+                        Send UpdateSelectedTheme
+                    End_Procedure
+                End_Object
+                                    
+                Object oWindowsLike is a cWebMenuItem
+                    Set psCaption to "Windows Like"
+                    
+                    Procedure OnClick 
+                        //  Change the theme at runtime
+                        WebSet psTheme of oWebApp to "Df_Windows_Like"
+                        
+                        //  Update menu
+                        Send UpdateSelectedTheme
+                    End_Procedure
+                End_Object
+                                                
+                Object oHighContrast is a cWebMenuItem
+                    Set psCaption to "High Contrast"
+                    
+                    Procedure OnClick 
+                        //  Change the theme at runtime
+                        WebSet psTheme of oWebApp to "Df_High_Contrast"
+                        
+                        //  Update menu
+                        Send UpdateSelectedTheme
+                    End_Procedure
+                End_Object
+                
+                Object oWebCremeItem is a cWebMenuItem
+                    Set psCaption to "Web Creme"
+                    Set pbEnabled to False
+                    
+                    Procedure OnClick
+                        //   Change the theme at runtime
+                        WebSet psTheme of oWebApp to "Df_Web_DataAccess"
+                        
+                        //  Update menu
+                        Send UpdateSelectedTheme
+                    End_Procedure
+                End_Object
+                
+                Object oFlatTouchItem is a cWebMenuItem
+                    Set psCaption to "Flat Touch"
+                    Set pbEnabled to False
+                    
+                    Procedure OnClick
+                        //   Change the theme at runtime
+                        WebSet psTheme of oWebApp to "Df_Flat_Touch"
+                        
+                        //  Update menu
+                        Send UpdateSelectedTheme
+                    End_Procedure
+                End_Object
+                
+                Object oFlatDesktopItem is a cWebMenuItem
+                    Set psCaption to "Flat Desktop"
+                    Set pbEnabled to False
+                    
+                    Procedure OnClick
+                        //   Change the theme at runtime
+                        WebSet psTheme of oWebApp to "Df_Flat_Desktop"
+                        
+                        //  Update menu
+                        Send UpdateSelectedTheme
+                    End_Procedure
+                End_Object
+                
+                Procedure UpdateSelectedTheme
+                    String sTheme
+                    
+                    //  Determine theme
+                    WebGet psTheme of oWebApp to sTheme
+
+                    //  Set enabled state
+                    WebSet pbEnabled of (oModernSky)        to (sTheme <> "Df_Modern_Sky")
+                    WebSet pbEnabled of (oWindowsLike)      to (sTheme <> "Df_Windows_Like")
+                    WebSet pbEnabled of (oHighContrast)     to (sTheme <> "Df_High_Contrast")
+                    WebSet pbEnabled of (oWebCremeItem)     to (sTheme <> "Df_Web_Creme")
+                    WebSet pbEnabled of (oFlatTouchItem)    to (sTheme <> "Df_Flat_Touch")
+                    WebSet pbEnabled of (oFlatDesktopItem)  to (sTheme <> "Df_Flat_Desktop")
+                End_Procedure
+                
+                Procedure OnLoad
+                    Send UpdateSelectedTheme
+                End_Procedure
+            End_Object
+            
+            
+            Object oRememberItems is a cWebMenuItem
+                Set psCaption to C_$Remember
+                
+                Object oRememberMenuItem is a cWebMenuItem
+                    Set psCaption to C_$CaptionRememberField
+                    
+                    Procedure OnClick
+                        Handle hoFocus
+                        Get DEOControlFocusObject to hoFocus
+                        If hoFocus Begin
+                            Send DDFieldRemember of hoFocus
+                        End
+                    End_Procedure
+                End_Object
+                
+                Object oRememberLastMenuItem is a cWebMenuItem
+                    Set psCaption to C_$CaptionRememberFieldLastValue
+                    
+                    Procedure OnClick
+                        Handle hoFocus
+                        Get DEOControlFocusObject to hoFocus
+                        If hoFocus Begin
+                            Send DDFieldRememberLast of hoFocus
+                        End
+                    End_Procedure
+                End_Object
+                
+                Object oUnRememberMenuItem is a cWebMenuItem
+                    Set psCaption to C_$CaptionUnRememberField
+                    
+                    Procedure OnClick
+                        Handle hoFocus
+                        Get DEOControlFocusObject to hoFocus
+                        If hoFocus Begin
+                            Send DDFieldUnRemember of hoFocus
+                        End
+                    End_Procedure
+                End_Object
+                
+                Object oRememberAllMenuItem is a cWebMenuItem
+                    Set psCaption to C_$CaptionClearAllAssignedDefaults
+                    
+                    Procedure OnClick
+                        Handle hoFocus hoDDO
+                        Get DEOControlFocusObject to hoFocus
+                        If hoFocus Begin
+                            Get Server of hoFocus to hoDDO
+                            If hoDDO Begin
+                                Send ClearAllRememberedDefaults of hoDDO
+                            End
+                        End
+                    End_Procedure
+                End_Object
+    
+            End_Object
+            
+        End_Object  
+        
+        Object oFindToolBar is a cWebToolBar
+            Object oFirstMenuItem is a cWebMenuFindFirst
+            End_Object  
+    
+            Object oPreviousMenuItem is a cWebMenuFindPrevious
+            End_Object  
+
+            Object oFindMenuItem is a cWebMenuFind
+            End_Object  
+
+            Object oNextMenuItem is a cWebMenuFindNext
+            End_Object  
+            
+            Object oLastMenuItem is a cWebMenuFindLast
+            End_Object
+                           
+            Object oPromptMenuItem is a cWebMenuPrompt
+            End_Object 
+        End_Object
+        
+        Object oFileToolBar is a cWebToolBar
+             Set pbShowCaption to True
+            
+            Object oClearMenuItem is a cWebMenuClear
+            End_Object              
+             
+            Object oClearAllMenuItem is a cWebMenuClearAll
+            End_Object   
+                        
+            Object oSaveMenuItem is a cWebMenuSave
+            End_Object  
+            
+            Object oDeleteMenuItem is a cWebMenuDelete
+            End_Object 
+        End_Object
+    End_Object
+
+
+    Use SessionManager.wo
+    Use WebResourceManager.wo
+    Use LoginDialog.wo
+    
+    Use Order.wo
+    Use Customer.wo
+    Use Inventory.wo
+    Use Vendor.wo
+    Use SalesPerson.wo
+    
+    Use CustomerListSample.wo
+    Use OrderListSample.wo
+    Use CustomerOrdersSample.wo
+    
+    Use DemoSliders.wo
+    Use DemoConstrainedGrid.wo
+    Use DemoDialogs.wo
+    Use DemoManualDataAwareGrid.wo
+    Use DemoManualGrid.wo
+    Use DemoMultiDDOStructure.wo
+    Use DemoTreeView.wo
+    Use DemoTreeViewCards.wo
+    Use DemoCards.wo
+    Use DemoPanels.wo
+    Use DemoFileUpload.wo
+    Use DemoSuggestionForm.wo
+    Use DemoColumnTypes.wo
+    
+    Use CustomerXML.wo
+    Use CustomerAndOrderInfo.wo
+    Use TestService.wo
+    
+    
+    // Generates a string of 40 random characters between ASCII 33 & ASCII 126
+    // This should produce a unique string suitable for a 16 character encryption key.
+    // Excludes the ;"' characters
+    // Used by WebApps to give the psEncryptPassword property a unique value.
+    Function GenerateEncryptString Returns String
+        Integer i iASCII
+        String sChar sKey
+        
+        For i from 0 to 39
+            Move (Random(93)) to iASCII
+            Move (iASCII + 34) to iASCII
+            
+            If (iASCII = 34 or iASCII = 39 or iASCII = 59) Begin
+                Increment iASCII
+            End
+            
+            Move (Character(iASCII)) to sChar
+            Move (sKey + sChar) to sKey
+        Loop
+        
+        Function_Return sKey
+    End_Function
+
+
+    Procedure InitPassword
+        // Note to the developer: For security purposes each installation of the WebOrder workspace must
+        // contain a unique value for the framework's encryption key. This value is stored in the cWebApp
+        // object's psEncryptPassword property.
+        //
+        // To ensure each running installation of WebOrder is different we have modified the Web App's OnLoad
+        // event to generate a random psEncryptPassword value the first time that the web app is run. This 
+        // value is then used and is stored in the OrdSys system table so that it does not get re-generated
+        // in subsequent instances of this web application.
+        //
+        // Since WebOrder is installed and run automatically when you install DataFlex we are required to 
+        // ensure that the encryption password cannot be guessed. Normally you would not need, or want, 
+        // to Use this technique in your own web applications. Instead you would manually set psEncryptPassword
+        // to a trusted, unique value for each web application that you deploy.
+        
+        
+        // Test if an encryption password has already been generated.
+        If (Trim(OrdSys.EncryptPassword) = "") Begin
+            Reread OrdSys
+            // Just in case another instance wrote to OrdSys.EncryptPassword in the millisecond
+            // between the above two lines of code we will test this value again
+            If (Trim(OrdSys.EncryptPassword) = "") Begin
+                Get GenerateEncryptString to OrdSys.EncryptPassword
+                SaveRecord OrdSys
+            End
+            Unlock
+        End
+
+        Set psEncryptPassword to (Trim(OrdSys.EncryptPassword))
+    End_Procedure
+    
+    Send InitPassword
+End_Object
+
+Send StartWebApp of oWebApp

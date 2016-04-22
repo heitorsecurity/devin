@@ -1,0 +1,146 @@
+Use cWebService.pkg
+Use DataDict.pkg
+Use VENDOR.DD
+Use INVT.DD
+Use CUSTOMER.DD
+Use SALESP.DD
+Use OrderHea.DD
+Use OrderDtl.DD
+
+Object oTestService is a cWebService
+
+    Set psDocumentation to ;
+        ("This is a Test Web Service. It contains a few simple operations " +;
+         "demonstrating how to create a DataFlex Web Service. "+;
+         "To test any of these web services using your web browser, simply follow "+;
+         "the link below for the specified service. "+;
+         "You can also view the WSDL for this service by accessing the link to "+;
+         "Service Description below. To create a new Web Service operation, simply "+;
+         "add a function in the oTestService Web Service object and select Publish. "+;
+         "To learn more about creating Web Services in DataFlex, please see the "+;
+         "Web Services section in the DataFlex Help.")
+
+    Set psServiceName to "TestService"
+    Set psServiceURI to "http://www.visualdataflex.com/examples/testservice"
+    Set psServiceTitle to "DataFlex Test Web Service"
+    Set psDescription to "Test Web Service"
+
+    Object Vendor_DD is a Vendor_DataDictionary
+        Send DefineAllExtendedFields
+    End_Object    // Vendor_DD
+
+    Object Invt_DD is a Invt_DataDictionary
+        Set DDO_Server to Vendor_DD
+        Send DefineAllExtendedFields
+    End_Object    // Invt_DD
+
+    Object Customer_DD is a Customer_DataDictionary
+        Send DefineAllExtendedFields
+    End_Object    // Customer_DD
+
+    Object Salesp_DD is a Salesp_DataDictionary
+        Send DefineAllExtendedFields
+    End_Object    // Salesp_DD
+
+    Object OrderHea_DD is a OrderHea_DataDictionary
+        Set DDO_Server to Customer_DD
+        Set DDO_Server to Salesp_DD
+        Send DefineAllExtendedFields
+    End_Object    // OrderHea_DD
+
+    Object OrderDtl_DD is a OrderDtl_DataDictionary
+        Set DDO_Server to OrderHea_DD
+        Set DDO_Server to Invt_DD
+        Send DefineAllExtendedFields
+    End_Object    // OrderDtl_DD
+
+    Set Main_DD to Invt_DD
+
+    { Published = True  }
+    { Description = "Returns a hello message using the name passed as the string."  }
+    Function SayHello String sName Returns String
+        String sReturn
+             
+        Move ("Hello," * sName +".") to sReturn
+        
+        Function_Return sReturn
+    End_Function
+    
+    { Published = True }
+    { Description = "Returns a welcome message using the name passed as the string and IIS server variables." }
+    Function Welcome String sName Returns String
+        String sReturn
+        String sIPAddr sServer sLocalAddr
+        
+        Get ServerVariable "REMOTE_ADDR" to sIpAddr   
+        Get ServerVariable "SERVER_NAME" to sServer
+        Get ServerVariable "LOCAL_ADDR" to sLocalAddr
+             
+        Move ("Hello," * sName + ". This is" * sServer) to sReturn
+        Move (sReturn * ". I see you're from" * sIPAddr * ". Welcome to" * sLocalAddr +"!") to sReturn
+        
+        Function_Return sReturn
+    End_Function    
+    
+    { Published = True }
+    { Description = "Echoes back the string passed." }
+    Function Echo String echoString Returns String
+        Function_Return echoString
+    End_Function
+
+    { Published = True }
+    { Description = "Adds two numbers and returns the result." }
+    Function AddNumber Real number1 Real number2 Returns Real
+        Function_Return (number1+number2)
+    End_Function
+
+    { Published = True }
+    { Description = "Looks up the price of a particular inventory item. Example item identifiers, DT, GOLD, MAPS, OBM, RUNMTR." }
+    Function PriceQuote String itemID Returns Number
+        Send Clear of Invt_DD
+        Move itemID to Invt.Item_id
+        Send Find of Invt_DD eq 1
+        If (Not(Found)) Begin
+            //If the inventory item cannot be found, raise a web service exception
+            Send WebServiceException ("Unknown inventory item '"+itemID+"'")
+            Function_Return
+        End
+        Function_Return Invt.Unit_price
+    End_Function
+
+    { Published = True }
+    { Description = "Looks up an order and returns the delivery date. Example: customer number 1 and order number 101." }
+    Function EstimatedOrderDeliveryDate Integer customerNumber Integer orderNumber Returns Date
+        Send Clear of OrderHea_DD
+        Move customerNumber to OrderHea.Customer_number
+        Move orderNumber to OrderHea.Order_number
+        Send Find of OrderHea_DD eq 2
+        If (Not(Found)) Begin
+            //If the order cannot be found, we raise a web service exception
+            Send WebServiceException "The specified order number, or order number/customer number combination, is invalid"
+            Function_Return
+        End
+
+        //We don't actually have a delivery date field in the database
+        //so we'll simply use the order date for this sample and add 30 days to it
+        Function_Return (OrderHea.Order_date + 30)
+    End_Function
+
+    { Published = True }
+    { Description = "Calculates the total number of items sold. Example: item identifiers, DT, GOLD, MAPS, OBM, RUNMTR." }
+    Function ItemsSoldToDate String itemID Returns Integer
+        Integer total
+        //We'll do a simple brute force search through the database
+        //and calculate the total number of items sold.
+        //It's a bit naive, but it will do for this example
+        Send Clear of OrderDtl_DD
+        Send Find of OrderDtl_DD ge 1
+        While (Found)
+            If (OrderDtl.Item_id = Uppercase(itemId));
+                Increment total
+            Send Find of OrderDtl_DD gt 1
+        Loop
+        Function_Return total
+    End_Function
+
+End_Object    // oTestService

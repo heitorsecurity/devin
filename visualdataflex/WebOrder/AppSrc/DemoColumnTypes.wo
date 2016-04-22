@@ -1,0 +1,329 @@
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg 
+Use Customer.DD
+Use cWebList.pkg
+Use cWebColumn.pkg
+Use cWebColumnLink.pkg
+Use cWebColumnButton.pkg
+Use cWebGroup.pkg
+Use cWebRadio.pkg
+Use cWebColumnImage.pkg
+Use cWebCheckBox.pkg
+Use cWebColumnCheckbox.pkg
+Use DemoCustomerDialog.wo
+
+Object oDemoColumnTypes is a cWebView
+    Object oCustomer_DD is a Customer_DataDictionary
+    End_Object
+
+    Set Main_DD to oCustomer_DD
+    Set Server to oCustomer_DD
+
+    Set piWidth to 700
+    Set psCaption to "Demo Column Types"
+    Set piHeight to 600
+
+    // Your DDO structure will go here
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oWebList1 is a cWebList
+            Set pbFillHeight to True
+
+            Object oSingleBtnCol is a cWebColumnButton
+                Set piWidth to 35
+                Set psCaption to ""
+                Set psButtonCaption to "Edit"
+                Set pbRender to False
+                
+                Procedure OnClick String sButton String sRowId
+                    Send ShowCustomer sRowId
+                End_Procedure
+            End_Object
+
+            Object oDynamicBtnCol is a cWebColumnButton
+                Set piWidth to 80
+                Set pbDynamic to True
+                Set pbRender to False
+                
+                //  Called for each row to define the buttons that need to be displayed.
+                Procedure OnDefineButtons
+                    //  Use AddButton to define a button (sID, sCaption, sCSSClass)
+                    Send AddButton "E" "Edit" ""
+                    
+                    //  The Global buffer contains the right record for data aware lists
+                    If (Customer.Status = "Y") Begin
+                        Send AddButton "D" "Deactivate" ""
+                    End
+                End_Procedure
+
+                Procedure OnClick String sButton String sRowId
+                    Forward Send OnClick sButton sRowId
+                    
+                    If (sButton = "E") Begin
+                        Send ShowCustomer sRowId
+                    End
+                    Else If (sButton = "D") Begin
+                        Send DeactivateCustomer sRowID
+                    End
+                End_Procedure
+            End_Object
+
+            Object oStaticImageCol is a cWebColumnImage
+                Set piWidth to 20
+                Set psImageUrl to "Images/Order.png"
+                Set psCaption to "Icon"
+                Set pbRender to False
+
+                Procedure OnClick String sImage String sRowId
+                    Forward Send OnClick sImage sRowId
+                    
+                    Send ShowInfoBox "You've clicked the image!"
+                End_Procedure
+            End_Object
+
+            Object oDynamicImageCol is a cWebColumnImage
+                Set piWidth to 20
+                Set pbDynamic to True
+                Set psCaption to "Icons"
+                Set pbServerOnClick to True
+                
+                Procedure OnDefineImages
+                    Forward Send OnDefineImages
+                    
+                    Send AddImage "Images/Order.png"
+                    
+                    If (Customer.Balance >  4000) Begin
+                        Send AddImage "Images/CDRom.png"
+                    End
+                End_Procedure
+
+                Procedure OnClick String sImage String sRowId
+                    Forward Send OnClick sImage sRowId
+                    
+                    Send ShowInfoBox ("You've clicked on image '" + sImage + "'!")
+                End_Procedure
+                
+                
+            End_Object
+
+
+            Object oCustomer_Customer_Number is a cWebColumn
+                Entry_Item Customer.Customer_Number
+                Set psCaption to "Number"
+                Set piWidth to 30
+            End_Object
+
+            Object oCustomer_Name is a cWebColumnLink
+                Entry_Item Customer.Name
+                Set psCaption to "Customer Name"
+                Set piWidth to 100
+
+                Procedure OnClick String sRowID String sCellValue
+                    Send ShowCustomer sRowId
+                End_Procedure
+            End_Object
+
+            Object oCustomer_City is a cWebColumn
+                Entry_Item Customer.City
+                Set psCaption to "City"
+                Set piWidth to 50
+                
+                Set psCSSClass to "DemoColumnCity"
+            End_Object
+
+            Object oCustomer_Balance is a cWebColumn
+                Entry_Item Customer.Balance
+                Set psCaption to "Balance"
+                Set piWidth to 50
+
+                Procedure OnDefineCssClass String  ByRef sCSSClass
+                    Forward Send OnDefineCssClass (&sCSSClass)
+                    
+                    If (Customer.Balance < 1000) Begin
+                        Move "DemoColLow" to sCSSClass
+                    End
+                    Else If (Customer.Balance > 5000) Begin
+                        Move "DemoColHigh" to sCSSClass
+                    End
+                    Else Begin
+                        Move "DemoColMedium" to sCSSClass
+                    End
+                End_Procedure
+            End_Object
+
+            Object oCustomer_Status is a cWebColumnCheckBox
+                Entry_Item Customer.Status
+                Set psCaption to "Status"
+                Set piWidth to 30
+            End_Object
+        End_Object
+
+        Object oWebGroup1 is a cWebGroup
+            Set psCaption to "Options"
+            Set piColumnCount to 12
+
+            Object oBtnRadio1 is a cWebRadio
+                Set piColumnSpan to 4
+                Set psCaption to "Single delete button"
+                Set psRadioValue to "SINGLE_BUTTON"
+                Set pbServerOnChange to True
+
+                Procedure OnChange String sNewValue String sOldValue
+                    Forward Send OnChange sNewValue sOldValue
+                    
+                    Send UpdateUI
+                End_Procedure
+                
+            End_Object
+
+            Object oImgRadio1 is a cWebRadio
+                Set piColumnSpan to 4
+                Set psCaption to "Static image"
+                Set psRadioValue to "STATIC_IMAGE"
+                Set piColumnIndex to 4
+            End_Object
+
+            Object oColorCheckbox is a cWebCheckbox
+                Set piColumnSpan to 4
+                Set psCaption to "Color balance"
+                Set pbServerOnChange to True
+                Set piColumnIndex to 8
+
+                Procedure OnChange String sNewValue String sOldValue
+                    Forward Send OnChange sNewValue sOldValue
+                    
+                    Send UpdateUI
+                End_Procedure
+            End_Object
+
+            Object oBtnRadio2 is a cWebRadio
+                Set piColumnSpan to 4
+                Set psCaption to "Dynamic buttons"
+                Set psRadioValue to "DYNAMIC_BUTTONS"
+            End_Object
+
+            Object oImgRadio2 is a cWebRadio
+                Set piColumnSpan to 4
+                Set psCaption to "Dynamic images"
+                Set psRadioValue to "DYNAMIC_IMAGE"
+                Set piColumnIndex to 4
+            End_Object
+            
+            Object oShowSelectedCheckbox is a cWebCheckbox
+                Set piColumnSpan to 4
+                Set psCaption to "Selected row"
+                Set pbServerOnChange to True
+                Set piColumnIndex to 8
+
+                Procedure OnChange String sNewValue String sOldValue
+                    Forward Send OnChange sNewValue sOldValue
+                    
+                    Send UpdateUI
+                End_Procedure
+            End_Object
+        End_Object
+    End_Object 
+    
+    
+    //  OnLoad:
+    //
+    //  Initializes the view.
+    Procedure OnLoad
+        Forward Send OnLoad
+        
+        //  Initialize UI based on settings
+        Send UpdateUI        
+        
+        //  Find first customer to trigger list fill
+        Send Find of oCustomer_DD FIRST_RECORD Index.1
+        
+    End_Procedure
+
+    
+    //  UpdateUI:
+    //
+    //  Updates the user interface according to the radio and checkbox settings.
+    Procedure UpdateUI
+        String sRadio
+        Boolean bChecked
+        
+        //  Hide / show columns based on radio settings
+        WebGet psValue of oBtnRadio1 to sRadio
+        
+        WebSet pbRender of oSingleBtnCol to (sRadio = "SINGLE_BUTTON")
+        WebSet pbRender of oDynamicBtnCol to (sRadio = "DYNAMIC_BUTTONS")
+        WebSet pbRender of oStaticImageCol to (sRadio = "STATIC_IMAGE")
+        WebSet pbRender of oDynamicImageCol to (sRadio = "DYNAMIC_IMAGE")
+        
+        //  Add / remove CSS class based on checkbox
+        Get GetChecked of oColorCheckbox to bChecked
+        If (bChecked) Begin
+            WebSet psCSSClass of oCustomer_Balance to "DemoColumnBalance"
+        End
+        Else Begin
+            WebSet psCSSClass of oCustomer_Balance to "" 
+        End
+        
+        //  Update pbShowSelected based on checkbox
+        Get GetChecked of oShowSelectedCheckbox to bChecked
+        WebSet pbShowSelected of oWebList1 to bChecked
+    End_Procedure
+    
+    
+        
+    //  ShowCustomer:
+    //
+    //  Shows the customer dialog, passing this view as the return object and the customer RowId.
+    Procedure ShowCustomer String sRowID
+        Send PopupCustomerDialog of oDemoCustomerDialog Self sRowID
+    End_Procedure
+    
+    
+    //  OnCloseModalDialog:
+    //
+    //  Called by the customer dialog when it is closed, so we can refresh the list.
+    Procedure OnCloseModalDialog Handle hoModalDialog
+        Send GridRefresh of oWebList1
+    End_Procedure
+    
+    
+    
+    
+    //  ExecDeactivateCustomer:
+    //
+    //  Callback handler for the ShowYesNo displayed by DeactivateCustomer. If yes is clicked,
+    //  the customer will be deactivated.
+    Procedure ExecDeactivateCustomer Integer eResult
+        If (eResult = cmYes) Begin
+            Set Field_Changed_Value of oCustomer_DD Field Customer.Status to "N"
+            Send Request_Save of oCustomer_DD
+            
+            Send GridRefresh of oWebList1
+        End
+    End_Procedure
+    
+    WebPublishProcedure ExecDeactivateCustomer
+    
+    
+    //  DeactivateCustomer:
+    //
+    //  Deactivates the customer after displaying a confirmation dialog.
+    Procedure DeactivateCustomer String sRowID
+        RowID rRowID
+        
+        //  Make sure the right customer is in the buffer
+        Move (DeserializeRowID(sRowID)) to rRowID
+        If (not(IsNullRowID(rRowID))) Begin
+            Send FindByRowId of oCustomer_DD Customer.File_Number rRowID
+            
+            //  Show Confirmation  
+            Send ShowYesNo Self (RefProc(ExecDeactivateCustomer)) (SFormat("Do you want to deactivate customer '%1'?", Trim(Customer.Name))) "Confirm"
+        End
+    End_Procedure
+    
+    
+
+End_Object

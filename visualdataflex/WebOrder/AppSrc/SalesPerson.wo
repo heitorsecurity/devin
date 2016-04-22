@@ -1,0 +1,44 @@
+// Sales Person Maintenance
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use SalesP.DD
+
+Object oSalesPerson is a cWebView
+    Set piColumnCount to 10
+    Set psCaption to "Sales Person Maintenance"
+    Set piWidth to 600
+
+    Object oSalesP_DD is a SalesP_DataDictionary
+    End_Object 
+
+    Set Main_DD To oSalesP_DD
+    Set Server  To oSalesP_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 10
+
+        Object oSalesPID is a cWebForm
+            Entry_Item SalesP.ID
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set psLabel to "ID:"
+            Set peLabelAlign to alignRight
+            Set piLabelOffset to 50
+        End_Object 
+
+        Object oSalesPName is a cWebForm
+            Entry_Item SalesP.Name
+            Set piColumnSpan to 7
+            Set piColumnIndex to 3
+            Set psLabel to "Name:"
+            Set peLabelAlign to alignRight
+            Set piLabelOffset to 50
+        End_Object 
+    End_Object 
+
+End_Object 

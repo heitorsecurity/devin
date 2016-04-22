@@ -1,0 +1,78 @@
+Use cWebModalDialog.pkg
+Use cWebButton.pkg
+Use cWebLabel.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Object oDemoQuestionDialog is a cWebModalDialog
+    Set psCaption to "Question.."
+    Set pbResizable to False
+    Set piWidth to 400
+    Set piColumnCount to 4
+    
+    // send reply on Esc or "x" as submit, which will send the callback on a cancel
+    Set pbServerOnEscape to True
+    
+    
+    Object oMainPanel is a cWebPanel
+        Set peRegion to prCenter
+        
+        Object oQuestionLbl is a cWebLabel
+            Set psCaption to "Are you sure that you want to do this?"
+        End_Object
+        
+        Object oResponseFrm is a cWebForm
+            Set pbShowLabel to False
+        End_Object
+    End_Object
+    
+    Object oButtonPanel is a cWebPanel
+        Set peRegion to prBottom
+        Set piColumnCount to 4
+        
+        Object oOkBtn is a cWebButton
+            Set pbShowLabel to False
+            Set psCaption to "Ok"
+            Set piColumnIndex to 1
+            
+            Procedure OnClick
+                Send Ok
+            End_Procedure
+        End_Object
+        
+        Object oCancelBtn is a cWebButton
+            Set pbShowLabel to False
+            Set psCaption to "Cancel"
+            Set piColumnIndex to 2
+            
+            Procedure OnClick
+                Send Cancel
+            End_Procedure
+        End_Object
+    End_Object
+    
+    Set pbServerOnSubmit to True
+   
+    Procedure OnSubmit
+        Send Ok
+    End_Procedure
+    
+    Procedure InitializeDialog String sTitle String sQuestion
+        WebSet psCaption of oDemoQuestionDialog to sTitle
+        WebSet psCaption of oQuestionLbl to sQuestion
+        WebSet psValue of oResponseFrm to ""
+    End_Procedure
+    
+    Procedure GetAnswers String ByRef sResponse Boolean ByRef bCancel
+        WebGet psValue of oResponseFrm to sResponse
+        WebGet pbCanceled to bCancel
+    End_Procedure
+
+    Procedure OnEscape
+        Forward Send OnEscape
+    End_Procedure
+    
+End_Object
+
+
+

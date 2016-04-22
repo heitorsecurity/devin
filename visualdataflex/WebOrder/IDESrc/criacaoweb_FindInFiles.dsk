@@ -1,0 +1,13 @@
+[Header]
+Mask=*.src;*.vw;*.sl;*.dg;*.rv;*.bp;*.pkg;*.wo;*.dd;*.inc;*.tpl;*.dfo;*.asp;*.asa;*.html;*.css;*.js
+Active=0
+SubDirectories=1
+WholeWordOnly=0
+SearchWhere=0
+Location=A:\Dropbox\Git_Bit\bagunca_aprendendo\visualdataflex\WebOrder\IdeSrc\criacaoweb_FindInFiles.dsk
+[A:\Dropbox\Git_Bit\bagunca_aprendendo\visualdataflex\WebOrder\AppSrc]
+IsEnabled=1
+[A:\Dropbox\Git_Bit\bagunca_aprendendo\visualdataflex\WebOrder\DdSrc]
+IsEnabled=1
+[A:\Dropbox\Git_Bit\bagunca_aprendendo\visualdataflex\WebOrder\AppHtml]
+IsEnabled=1

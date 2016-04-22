@@ -1,0 +1,87 @@
+// Inventory Maintenance
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use Vendor.DD
+Use Invt.DD
+
+Object oInventory is a cWebView
+    Set piColumnCount to 10
+    Set psCaption to "Inventory Maintenance"
+    Set piWidth to 700
+
+    Object oVendor_DD is a Vendor_DataDictionary
+    End_Object 
+
+    Object oInvt_DD is a Invt_DataDictionary
+        Set DDO_Server To oVendor_DD
+    End_Object 
+
+    Set Main_DD To oInvt_DD
+    Set Server  To oInvt_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 10
+
+        Object oInvtItem_ID is a cWebForm
+            Entry_Item Invt.Item_ID
+            Set piColumnSpan to 4
+            Set piColumnIndex to 0
+            Set psLabel to "Item ID:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oInvtDescription is a cWebForm
+            Entry_Item Invt.Description
+            Set piColumnSpan to 6
+            Set piColumnIndex to 4
+            Set psLabel to "Description:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oVendorID is a cWebForm
+            Entry_Item Vendor.ID
+            Set piColumnSpan to 4
+            Set piColumnIndex to 0
+            Set psLabel to "Vendor ID:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oVendorName is a cWebForm
+            Entry_Item Vendor.Name
+            Set piColumnSpan to 6
+            Set piColumnIndex to 4
+            Set psLabel to "Vendor Name:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oInvtVendor_Part_ID is a cWebForm
+            Entry_Item Invt.Vendor_Part_ID
+            Set piColumnSpan to 5
+            Set piColumnIndex to 0
+            Set psLabel to "Vendor Part ID:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oInvtUnit_Price is a cWebForm
+            Entry_Item Invt.Unit_Price
+            Set piColumnSpan to 4
+            Set piColumnIndex to 0
+            Set psLabel to "Unit Price:"
+            Set peLabelAlign to alignRight
+        End_Object 
+
+        Object oInvtOn_Hand is a cWebForm
+            Entry_Item Invt.On_Hand
+            Set piColumnSpan to 3
+            Set piColumnIndex to 4
+            Set psLabel to "Qty On Hand:"
+            Set peLabelAlign to alignRight
+        End_Object 
+    End_Object 
+
+End_Object 

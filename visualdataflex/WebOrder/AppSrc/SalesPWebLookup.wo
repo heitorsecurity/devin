@@ -1,0 +1,93 @@
+// Sales Person Lookup List
+//
+
+Use cWebModalDialog
+Use cWebPanel.pkg
+Use cWebButton.pkg
+Use cWebPromptList.pkg
+Use cWebColumn.pkg
+
+Use SalesP.DD
+
+Object oSalesPWebLookup is a cWebModalDialog
+    Set piColumnCount to 5
+    Set psCaption to "Sales Person Lookup List"
+    Set piWidth to 450
+    Set piHeight to 400
+
+    Object oSalesP_DD is a SalesP_DataDictionary
+    End_Object 
+
+    Set Main_DD To oSalesP_DD
+    Set Server  To oSalesP_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 5
+
+        Object oPromptList is a cWebPromptList
+            Set pbFillHeight to True
+            Set piColumnSpan to 5
+            
+            // Since there are only a few records, we set this property so all records are sent to 
+            // the client at once. This improves the performance of scrolling and searching and 
+            // enables sorting on all columns.
+            Set peDbGridType to gtAllData
+
+            Object oSalesPID is a cWebColumn
+                Entry_Item SalesP.ID
+                Set psCaption to "ID"
+                Set piWidth to 70
+            End_Object 
+
+            Object oSalesPName is a cWebColumn
+                Entry_Item SalesP.Name
+                Set psCaption to "Sales Person Name"
+                Set piWidth to 262
+            End_Object 
+        End_Object 
+
+        Object oOkButton is a cWebButton
+            Set psCaption to "OK"
+            Set piColumnSpan to 1
+            Set piColumnIndex to 2
+
+            Procedure OnClick
+                Send Ok of oPromptList
+            End_Procedure
+
+        End_Object 
+
+        Object oCancelButton is a cWebButton
+            Set psCaption to "Cancel"
+            Set piColumnSpan to 1
+            Set piColumnIndex to 3
+            Procedure OnClick
+                Send Cancel of oPromptList
+            End_Procedure
+
+        End_Object 
+
+        Object oSearchButton is a cWebButton
+            Set psCaption to "Search..."
+            Set piColumnSpan to 1
+            Set piColumnIndex to 4
+
+            Procedure OnClick
+                Send Search of oPromptList
+            End_Procedure
+
+        End_Object 
+    End_Object 
+
+    Set pbServerOnShow to True
+    Procedure OnShow 
+        Send InitializePromptList of oPromptList
+    End_Procedure 
+
+    Set pbServerOnSubmit to True
+    Procedure OnSubmit 
+        Send Ok of oPromptList
+    End_Procedure 
+
+End_Object 

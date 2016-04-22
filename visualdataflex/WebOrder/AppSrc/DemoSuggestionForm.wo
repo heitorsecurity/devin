@@ -1,0 +1,92 @@
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg 
+Use cWebSuggestionForm.pkg
+Use Customer.DD
+Use Vendor.DD
+Use cWebHorizontalLine.pkg
+Use cWebLabel.pkg
+
+Object oDemoSuggestionForm is a cWebView
+    Object oVendor_DD is a Vendor_DataDictionary
+    End_Object
+
+    Object oCustomer_DD is a Customer_DataDictionary
+        Procedure Field_defaults
+            Forward Send Field_Defaults
+            Set Field_Changed_Value   Field Customer.State to ""
+        End_Procedure
+    End_Object
+
+    Set Main_DD to oCustomer_DD
+    Set Server to oCustomer_DD
+    
+    Send AddDDOStructure oVendor_DD
+
+    Set piWidth to 700
+    Set psCaption to "Suggestion Form"
+    
+
+    // Your DDO structure will go here
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oWebLabel1 is a cWebLabel
+            Set piColumnSpan to 0
+            
+            Set psCaption to "Data bound, incremental, starting at character 1"
+            Set peAlign to alignCenter
+        End_Object
+
+        Object oWebSuggestionForm2 is a cWebSuggestionForm
+            Entry_Item Customer.Customer_Number
+            Set piColumnSpan to 4
+            Set psLabel to "Customer Number:"
+            Set piStartAtChar to 1
+        End_Object
+
+        Object oWebSuggestionForm1 is a cWebSuggestionForm
+            Entry_Item Customer.Name
+            Set piColumnSpan to 7
+            Set psLabel to "Customer Name:"
+            Set piStartAtChar to 1
+        End_Object
+
+        Object oWebLabel3 is a cWebLabel
+            Set psCaption to "Validation Table, incremental, starting at character 1"
+            Set piColumnSpan to 0
+            Set peAlign to alignCenter
+        End_Object
+
+        Object oWebSuggestionForm4 is a cWebSuggestionForm
+            Entry_Item Customer.State
+            Set piColumnSpan to 6
+            Set psLabel to "Customer State:"
+            Set peSuggestionMode to smValidationTable
+            Set piStartAtChar to 1
+        End_Object
+
+        Object oWebHorizontalLine1 is a cWebHorizontalLine
+        End_Object
+        
+        
+        Object oWebLabel2 is a cWebLabel
+            Set piColumnSpan to 0
+            
+            Set psCaption to "Data bound, full text, starting at character 2"
+            Set peAlign to alignCenter
+        End_Object
+
+        Object oWebSuggestionForm3 is a cWebSuggestionForm
+            Entry_Item Vendor.Name
+            Set Server to oVendor_DD
+            Set piColumnSpan to 7
+            Set pbFullText to True
+            Set psLabel to "Vendor name:"
+        End_Object
+        
+        
+    End_Object 
+
+End_Object
