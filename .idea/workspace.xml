@@ -2,263 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72650970-bf2d-4ddf-996c-0f12b5f8fbee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/ManualData.csv" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/ManualData.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bagunca_aprendendo.iml" afterPath="$PROJECT_DIR$/.idea/bagunca_aprendendo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE.md" afterPath="$PROJECT_DIR$/LICENSE.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delphi/HelloW.dfm" afterPath="$PROJECT_DIR$/delphi/HelloW.dfm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delphi/HelloW.pas" afterPath="$PROJECT_DIR$/delphi/HelloW.pas" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delphi/HelloWorld.dpr" afterPath="$PROJECT_DIR$/delphi/HelloWorld.dpr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delphi/HelloWorld.dproj" afterPath="$PROJECT_DIR$/delphi/HelloWorld.dproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delphi/HelloWorld.dproj.local" afterPath="$PROJECT_DIR$/delphi/HelloWorld.dproj.local" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/css/style.css" afterPath="$PROJECT_DIR$/html/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index2.html" afterPath="$PROJECT_DIR$/html/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/importCSV/db/schema.rb" afterPath="$PROJECT_DIR$/ruby/importCSV/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/importCSV/example_input.tab" afterPath="$PROJECT_DIR$/ruby/importCSV/example_input.tab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/importCSV2/db/schema.rb" afterPath="$PROJECT_DIR$/ruby/importCSV2/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/importCSV2/learning.txt" afterPath="$PROJECT_DIR$/ruby/importCSV2/learning.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/importCSV2/users.csv" afterPath="$PROJECT_DIR$/ruby/importCSV2/users.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/ruby_em_20min/cidades.rb" afterPath="$PROJECT_DIR$/ruby/ruby_em_20min/cidades.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/ruby_em_20min/ri20min.rb" afterPath="$PROJECT_DIR$/ruby/ruby_em_20min/ri20min.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/starting01/.idea/workspace.xml" afterPath="$PROJECT_DIR$/ruby/starting01/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruby/starting01/simple_file.rb" afterPath="$PROJECT_DIR$/ruby/starting01/simple_file.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Basic/CustBasicRptImages.inc" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Basic/CustBasicRptImages.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Basic/CustomerListBR.rv" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Basic/CustomerListBR.rv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Customer.sl" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Customer.sl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Customer.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Customer.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/DemoButtonTest.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/DemoButtonTest.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/DemoCalendarControl.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/DemoCalendarControl.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/DemoParentCombos.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/DemoParentCombos.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/DemoSuggestionForm.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/DemoSuggestionForm.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Invt.sl" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Invt.sl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Invt.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Invt.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Order.cfg" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Order.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Order.prn" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Order.prn" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Order.src" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Order.src" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Order.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Order.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/OrderPrecompile.pkd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/OrderPrecompile.pkd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/OrderPrecompile.pkg" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/OrderPrecompile.pkg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/OrderPrecompile.prp" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/OrderPrecompile.prp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Orderhea.sl" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Orderhea.sl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Salesp.sl" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Salesp.sl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Salesp.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Salesp.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Vendor.sl" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Vendor.sl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Vendor.vw" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/Vendor.vw" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/WinPrint/CustomerListWP.rv" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/WinPrint/CustomerListWP.rv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/WinPrint/ItemsPerOrderWP.rv" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/WinPrint/ItemsPerOrderWP.rv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/WinPrint/OrdersByCustomerWP.rv" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/WinPrint/OrdersByCustomerWP.rv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/WinPrint/OrdersWP.rv" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/WinPrint/OrdersWP.rv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/config/classlist.xml" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/AppSrc/config/classlist.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/CodeMast.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/CodeMast.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/CodeType.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/CodeType.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Connection.ini" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Connection.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Customer.dd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Customer.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Customer.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Customer.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/DDClassList.xml" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/DDClassList.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/FlexErrs.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/FlexErrs.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Invt.dd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Invt.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Invt.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Invt.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrdSys.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrdSys.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrderDtl.dd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrderDtl.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrderDtl.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrderDtl.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrderHea.dd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrderHea.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrderHea.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/OrderHea.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/SalesP.dd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/SalesP.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/SalesP.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/SalesP.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Users.dd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Users.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Users.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Users.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Vendor.dd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Vendor.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Vendor.fd" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/DDSrc/Vendor.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/CodeMast.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/CodeMast.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/CodeType.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/CodeType.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Customer.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Customer.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Invt.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Invt.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Label.ttx" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Label.ttx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/OrdSys.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/OrdSys.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/OrderDtl.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/OrderDtl.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/OrderHea.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/OrderHea.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/SalesP.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/SalesP.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/ShipVia.ttx" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/ShipVia.ttx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Terms.ttx" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Terms.ttx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Users.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Users.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Vendor.tag" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Data/Vendor.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/IDESrc/criacaoweb_FindInFiles.dsk" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/IDESrc/criacaoweb_FindInFiles.dsk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/IDESrc/criacaoweb_Studio.dsk" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/IDESrc/criacaoweb_Studio.dsk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/IDESrc/criacaoweb_TraceOpts.dsk" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/IDESrc/criacaoweb_TraceOpts.dsk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Order Entry.sws" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Order Entry.sws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Programs/Config.ws" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Programs/Config.ws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Programs/Order.exe.manifest" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Programs/Order.exe.manifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/Order Entry/Programs/Reindex.log" afterPath="$PROJECT_DIR$/visualdataflex/Order Entry/Programs/Reindex.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/CssStyle/application.css" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/CssStyle/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/CssThemes/Df_Modern_Sky/theme.css" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/CssThemes/Df_Modern_Sky/theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/CustomerAndOrderInfo.wso" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/CustomerAndOrderInfo.wso" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/CustomerXML.wso" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/CustomerXML.wso" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/DebugBuffer.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/DebugBuffer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/Resource.asp" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/Resource.asp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/Upload.asp" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/Upload.asp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/debugbuffer.css" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/debugbuffer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df-include.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df-include.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df-min.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df-min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/DatePicker.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/DatePicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/GroupHub.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/GroupHub.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/InfoBalloon.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/InfoBalloon.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/MobRuleController.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/MobRuleController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/ServerAction.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/ServerAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebActionBar.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebActionBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebApp.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseContainer.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseControl.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseControl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseDEO.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseDEO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseFileUpload.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseFileUpload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseForm.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseMenu.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseUIObject.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBaseUIObject.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBreadcrumb.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebBreadcrumb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebButton.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCard.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCardContainer.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCardContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCheckbox.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCheckbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumn.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnButton.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnCheckbox.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnCheckbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnCombo.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnCombo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnDate.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnDate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnImage.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnImage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnLink.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnLink.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnSuggestion.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumnSuggestion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumn_mixin.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebColumn_mixin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCombo.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCombo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCommandBar.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebCommandBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebDateForm.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebDateForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebDatePicker.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebDatePicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebEdit.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebEdit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebFileUploadButton.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebFileUploadButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebFileUploadForm.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebFileUploadForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebFloatingPanel.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebFloatingPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebForm.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebGrid.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebGrid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebGroup.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebGroup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebHorizontalLine.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebHorizontalLine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebHtmlBox.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebHtmlBox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebIFrame.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebIFrame.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebImage.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebImage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebLabel.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebLabel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebList.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuBar.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuButton.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuGroup.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuGroup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuItem.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuList.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebMenuList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebModalDialog.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebModalDialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebObject.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebObject.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebPanel.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebProgressBar.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebProgressBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebRadio.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebRadio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebSlider.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebSlider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebSpacer.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebSpacer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebSuggestionForm.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebSuggestionForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebTabContainer.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebTabContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebTabPage.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebTabPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebTimer.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebTimer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebToolBar.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebToolBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebTreeView.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebTreeView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebView.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebWindow.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/WebWindow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/ajax/HttpRequest.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/ajax/HttpRequest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/ajax/JSONCall.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/ajax/JSONCall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/events.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/events.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/settings.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/sys.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/sys.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/sys/json.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/sys/json.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/sys/vt.js" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/df/sys/vt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/freeASPUpload.asp" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/DfEngine/freeASPUpload.asp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/Global.asa" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/Global.asa" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/Index.html" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/Index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/Order.html" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/Order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/TestService.wso" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/TestService.wso" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/WebServiceDispatcher.wso" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/WebServiceDispatcher.wso" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/iOrders.html" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppHTML/iOrders.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/Customer.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/Customer.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerAndOrderInfo.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerAndOrderInfo.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerListSample.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerListSample.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerOrdersSample.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerOrdersSample.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerWebLookup.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerWebLookup.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerXML.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/CustomerXML.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoActionDialog.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoActionDialog.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoAdvancedLayout.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoAdvancedLayout.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoCards.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoCards.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoColumnTypes.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoColumnTypes.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoConstrainedGrid.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoConstrainedGrid.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoCustomerDialog.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoCustomerDialog.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoDialogs.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoDialogs.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoFileDialog.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoFileDialog.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoFileUpload.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoFileUpload.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoManualDataAwareGrid.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoManualDataAwareGrid.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoManualGrid.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoManualGrid.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoMultiDDOStructure.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoMultiDDOStructure.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoPanels.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoPanels.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoQuestionDialog.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoQuestionDialog.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoSliders.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoSliders.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoStressTest.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoStressTest.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoSuggestionForm.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoSuggestionForm.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoTreeView.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoTreeView.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoTreeViewCards.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/DemoTreeViewCards.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/Inventory.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/Inventory.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/InvtWebLookup.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/InvtWebLookup.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/LoginDialog.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/LoginDialog.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/Order.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/Order.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/OrderListSample.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/OrderListSample.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/OrderWebLookup.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/OrderWebLookup.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/SalesPWebLookup.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/SalesPWebLookup.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/SalesPerson.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/SalesPerson.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/SessionManager.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/SessionManager.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/TestService.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/TestService.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/Vendor.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/Vendor.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/VendorWebLookup.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/VendorWebLookup.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/WebApp.cfg" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/WebApp.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/WebApp.prn" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/WebApp.prn" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/WebApp.src" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/WebApp.src" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/WebResourceManager.wo" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/WebResourceManager.wo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/config/classlist.xml" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/AppSrc/config/classlist.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/CodeMast.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/CodeMast.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/CodeType.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/CodeType.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Connection.ini" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Connection.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Customer.dd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Customer.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Customer.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Customer.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/DDClassList.xml" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/DDClassList.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/FlexErrs.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/FlexErrs.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Invt.dd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Invt.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Invt.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Invt.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrdSys.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrdSys.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrderDtl.dd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrderDtl.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrderDtl.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrderDtl.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrderHea.dd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrderHea.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrderHea.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/OrderHea.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/SalesP.dd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/SalesP.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/SalesP.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/SalesP.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Vendor.dd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Vendor.dd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Vendor.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/Vendor.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/WebAppSession.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/WebAppSession.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/WebAppUser.fd" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/DDSrc/WebAppUser.fd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/CodeMast.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/CodeMast.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/CodeType.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/CodeType.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/Customer.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/Customer.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/Invt.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/Invt.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/OrdSys.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/OrdSys.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/OrderDtl.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/OrderDtl.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/OrderHea.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/OrderHea.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/SalesP.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/SalesP.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/Vendor.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/Vendor.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/WebAppSession.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/WebAppSession.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/WebAppUser.tag" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Data/WebAppUser.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/IDESrc/criacaoweb_FindInFiles.dsk" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/IDESrc/criacaoweb_FindInFiles.dsk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/IDESrc/criacaoweb_Studio.dsk" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/IDESrc/criacaoweb_Studio.dsk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/IDESrc/criacaoweb_TraceOpts.dsk" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/IDESrc/criacaoweb_TraceOpts.dsk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Programs/Config.ws" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Programs/Config.ws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/Programs/Reindex.log" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/Programs/Reindex.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualdataflex/WebOrder/WebOrder.sws" afterPath="$PROJECT_DIR$/visualdataflex/WebOrder/WebOrder.sws" />
     </list>
     <ignored path="bagunca_aprendendo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -504,7 +249,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1461480429081</updated>
-      <workItem from="1461480432988" duration="685000" />
+      <workItem from="1461480432988" duration="863000" />
     </task>
     <task id="LOCAL-00001" summary="simple file">
       <created>1461480779707</created>
@@ -517,15 +262,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="685000" />
+    <option name="totallyTimeSpent" value="863000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25416037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5060514" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5060514" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49394855" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
