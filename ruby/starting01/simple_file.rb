@@ -1,3 +1,4 @@
 puts 123
-print 456
+# print does not add a line return
+   print 456
 puts 789
