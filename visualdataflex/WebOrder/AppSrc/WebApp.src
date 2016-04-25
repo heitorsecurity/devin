@@ -22,14 +22,37 @@ Object oWebApp is a cWebApp
 //    End_Procedure
 
     Object oCommandbar is a cWebCommandBar
-        Object oPainel Geral is a cWebPanel
+        Object oPainelGeral is a cWebPanel
             Set peRegion to prTop
             
             Object oPainelTop is a cWebPanel
                 Set peRegion to prTop
-                ..
-            End_Object
-        End_Object
+                Set piColumnCount to 20
+                Set psCSSClass to "PainelTopo"
+                
+                Object oPainelLogo is a cWebPanel
+                    Set peRegion to prTop
+                    Set piColumnCount to 20
+                    Set piWidth to 175
+                    
+                    Object oLogoSuperior is a cWebImage
+                        Set piColumnSpan to 2
+                        Set psUrl to "CssThemes/Df_Web_DataAccess/logo-02.png"
+                        Set piHeight to 40
+                        Set pePosition to wiFit
+                        Set pbFillHeight to True
+                    End_Object //oLogoSuperior
+                    
+                    Object oTitulo is a cWebHtmlBox
+                        Set psHtml to "<h1><strong><center>Alternando o estilo da sua aplica‡Æo.</center></strong></h1>"
+                        Set psCSSClass to "TituloApp"
+                        Set pbFillHeight to True
+                        Set piColumnIndex to 4
+                        Set piColumnSpan to 11
+                    End_Object //oTitulo
+                End_Object //oPainelLogo
+            End_Object //oPainelTop
+        End_Object //oPainelGeral
         
         Object oMenuBar is a cWebMenuBar
             Object oFileMenu is a cWebMenuItem
