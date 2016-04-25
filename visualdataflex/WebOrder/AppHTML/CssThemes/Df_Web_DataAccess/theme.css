@@ -2802,17 +2802,18 @@ span.WebItm_Icon:before,
 /*---------------------Tela Login---------------------*/
 
 .login-user input{
-    background: url("login_user.png) 2% 50% no-repeat;
-    border: 0px solid rgb(147, 147, 146);
-    padding: 0 0 0 25px;
-    border-radius: 5px;
-    color: rgb(60, 60, 59);
+	background: url("login_user.png") 2% 50% no-repeat;
+	border: 0px solid rgb(147, 147, 146);
+	padding: 0 0 0 25px;
+	border-radius: 5px;
+	color: rgb(60, 60, 59);
 }
 
+
 .login-pass input{
-    background: url("login_pass.png) 2% 50% no-repeat;
-    border: 0px solid rgb(147, 147, 146);
-    padding: 0 0 0 25px;
-    border-radius: 5px;
-    color: rgb(60, 60, 59);
+	background: url("login_pass.png") 2% 50% no-repeat;
+	border: 0px solid rgb(147, 147, 146);
+	border-radius: 5px;
+	padding: 0 0 0 25px;
+	color: rgb(60, 60, 59);
 }

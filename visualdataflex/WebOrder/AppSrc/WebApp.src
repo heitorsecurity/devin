@@ -22,6 +22,14 @@ Object oWebApp is a cWebApp
 //    End_Procedure
 
     Object oCommandbar is a cWebCommandBar
+        Object oPainel Geral is a cWebPanel
+            Set peRegion to prTop
+            
+            Object oPainelTop is a cWebPanel
+                Set peRegion to prTop
+                ..
+            End_Object
+        End_Object
         
         Object oMenuBar is a cWebMenuBar
             Object oFileMenu is a cWebMenuItem

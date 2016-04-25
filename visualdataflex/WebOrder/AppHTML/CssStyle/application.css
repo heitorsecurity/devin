@@ -24,3 +24,30 @@
 #OWEBAPP .DemoColumnCity{
    font-weight: bold;
 }
+
+/* Cabeçalho da aplicação */
+#OWEBAPP .TituloApp h1,
+#OWEBAPP .TituloApp center{
+    margin-top: 8px;
+    font-size: 20px;
+    margin-bottom: 0px;
+    line-height: 25px;
+    overflow: hidden;
+}
+
+#OWEBAPP .PainelUsuario div{
+    height: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#OWEAPP .PainelTopo{
+    padding: 0px 0px 0px 0px;
+    /*border: 1px solid gray;*/
+    background-color: #FFFFFF;
+}
+
+#OWEBAPP .PainelTopo div.WebCon_Sizer{
+    background-color: #FFFFFF;
+}
+/* FIM - Cabeçalho da aplicação */

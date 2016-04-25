@@ -15,10 +15,17 @@ Object oLoginDialog is a cWebModalDialog
     
     Object oTopPanel is a cWebPanel
         Set peRegion to prTop
-        Set piHeight to 55       
+        Set piHeight to 65
+        
+        Object oLogoSuperior is a cWebImage
+            Set psUrl to "CssThemes/Df_Web_DataAccess/logo-02.png"
+            Set piHeight to 75
+            Set pePosition to wiFit
+            Set pbFillHeight to True
+        End_Object
         
         Object oDescription is a cWebLabel
-            Set psCaption to "Please enter your User ID and Password to login. (Hint: John, John)"
+            Set psCaption to "Login: John Password: John"
             Set peAlign to alignCenter
         End_Object
     End_Object
