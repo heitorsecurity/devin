@@ -1,0 +1,9 @@
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\bin\Debug\Variaveis01.exe.config
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\bin\Debug\Variaveis01.exe
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\bin\Debug\Variaveis01.pdb
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\obj\Debug\Variaveis01.csprojResolveAssemblyReference.cache
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\obj\Debug\Variaveis01.Form1.resources
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\obj\Debug\Variaveis01.Properties.Resources.resources
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\obj\Debug\Variaveis01.csproj.GenerateResource.Cache
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\obj\Debug\Variaveis01.exe
+A:\Source\Repos\bagunca_aprendendo\csharp\Variaveis01\Variaveis01\obj\Debug\Variaveis01.pdb
