@@ -1,9 +1,0 @@
-rails g model User steps:integer distance:float exercise:integer sleep:float calories:integer
-
-rake db:migrate
-
-rails g controller Users index import
-
-rails g migration add_column_user_to_user user:string
-
-rake db:migrate
