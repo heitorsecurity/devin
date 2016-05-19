@@ -1,0 +1,9 @@
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\bin\Debug\EstruturaControle02.exe.config
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\bin\Debug\EstruturaControle02.exe
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\bin\Debug\EstruturaControle02.pdb
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.csprojResolveAssemblyReference.cache
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.Form1.resources
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.Properties.Resources.resources
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.csproj.GenerateResource.Cache
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.exe
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.pdb
