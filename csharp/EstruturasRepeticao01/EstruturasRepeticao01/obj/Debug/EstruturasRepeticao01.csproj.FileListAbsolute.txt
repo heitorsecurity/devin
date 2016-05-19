@@ -1,0 +1,9 @@
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\bin\Debug\EstruturasRepeticao01.exe.config
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\bin\Debug\EstruturasRepeticao01.exe
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\bin\Debug\EstruturasRepeticao01.pdb
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.csprojResolveAssemblyReference.cache
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.Form1.resources
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.Properties.Resources.resources
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.csproj.GenerateResource.Cache
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.exe
+A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.pdb
