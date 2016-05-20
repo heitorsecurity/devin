@@ -1,1 +1,2 @@
 C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\hacking_prob001\hacking_prob001\bin\Debug\hacking_prob001.exe.config
+A:\Source\Repos\bagunca_aprendendo\csharp\hacking_prob001\hacking_prob001\bin\Debug\hacking_prob001.exe.config

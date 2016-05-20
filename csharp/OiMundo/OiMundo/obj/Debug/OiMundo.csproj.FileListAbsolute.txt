@@ -7,3 +7,6 @@ c:\users\heitor.trsouza1\documents\visual studio 2015\Projects\OiMundo\OiMundo\o
 c:\users\heitor.trsouza1\documents\visual studio 2015\Projects\OiMundo\OiMundo\obj\Debug\OiMundo.csproj.GenerateResource.Cache
 c:\users\heitor.trsouza1\documents\visual studio 2015\Projects\OiMundo\OiMundo\obj\Debug\OiMundo.exe
 c:\users\heitor.trsouza1\documents\visual studio 2015\Projects\OiMundo\OiMundo\obj\Debug\OiMundo.pdb
+A:\Source\Repos\bagunca_aprendendo\csharp\OiMundo\OiMundo\bin\Debug\OiMundo.exe.config
+A:\Source\Repos\bagunca_aprendendo\csharp\OiMundo\OiMundo\obj\Debug\OiMundo.exe
+A:\Source\Repos\bagunca_aprendendo\csharp\OiMundo\OiMundo\obj\Debug\OiMundo.pdb

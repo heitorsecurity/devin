@@ -34,6 +34,14 @@ namespace OiMundo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Qual a mensagem que será exibida na caixa de texto
+            // criada pelo seguinte código?
+            // MessageBox.Show("Curso de C# da Caelum");
+            // Hello World
+            // Curso de C# da Caelum
+            // Olá Mundo
+            // Caelum
+            // Nenhuma das opções
             MessageBox.Show("Curso de C# da Caelum");
         }
 
