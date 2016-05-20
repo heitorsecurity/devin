@@ -29,11 +29,33 @@ namespace EstruturasRepeticao01
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //int total = 1;
-            //for(int i = 0; i < 1000; i += 1)
+            int total = 0;
+            int totalSoma = 0;
+            for (int i = 0; i <= 1000; i += 1)
+            {
+                total = total + 1;
+                totalSoma = total + totalSoma;
+            }
+            MessageBox.Show("Soma de 1 até 1000: " + totalSoma);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //int numero = 0;
+            //for (int i = 0; i <= 100; i += 1)
             //{
-            //    MessageBox.Show("Contando: " + total = total+1);
+            //    numero = numero + 1;
             //}
+            //if (numero % 3 == 0)
+            //{
+            //    MessageBox.Show("O número " + numero + " é múltiplo de 3.");
+            //}
+            //else
+            //{
+
+            //}
+
+            //        MessageBox.Show("O número " + numero + " não é múltiplo de 3.");
         }
     }
 }
