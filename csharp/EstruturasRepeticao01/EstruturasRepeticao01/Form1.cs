@@ -63,9 +63,63 @@ namespace EstruturasRepeticao01
             // pulando os múltiplos de 3. O programa deve imprimir o resultado final
             // em um MessageBox.
             // Qual o resultado?
-            //int total = 0;
-            //int totalSoma = 0;
-            //for (int i = 0; i <= 100; i += 1)
+            int total = 0;
+            int numero = 0;
+            for (int i = 0; i <= 100; i += 1)
+            {
+                numero = numero + 1;
+                if (numero % 3 == 1)
+                {
+                    total = total + numero;
+                }
+            }
+            MessageBox.Show("Soma de todos os numeros de 1 ate 100 pulando os multiplos de 3: " + total);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // (Opcional) Escreva um programa em C# que
+            // imprime todos os números que são divisíveis por
+            // 3 ou por 4 entre 0 e 30.
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // (Opcional) Faça um programa em C# que imprima os fatoriais de
+            // 1 a 10. O fatorial de um número n é n * n-1 * n-2 ... até n = 1.
+            // O fatorial de 0 é 1
+            // O fatorial de 1 é(0!) * 1 = 1
+            // O fatorial de 2 é(1!) * 2 = 2
+            // O fatorial de 3 é(2!) * 3 = 6
+            // O fatorial de 4 é(3!) * 4 = 24
+            // Faça um for que inicie uma variável n(número) como 1 e
+            // fatorial(resultado) como 1 e varia n de 1 até 10:
+            // int fatorial = 1;
+            // for (int n = 1; n <= 10; n++)
+            // {
+            // 
+            // }
+    }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // (Opcional) Faça um programa em C# que imprima os primeiros
+            // números da série de Fibonacci até passar de 100. A série de
+            // Fibonacci é a seguinte: 0, 1, 1, 2, 3, 5, 8, 13, 21 etc...
+            // Para calculá-la, o primeiro elemento vale 0, o segundo vale 1,
+            // daí por diante, o n-ésimo elemento vale o (n-1)-ésimo elemento
+            // somado ao (n-2)-ésimo elemento (ex: 8 = 5 + 3).
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // (Opcional) Faça um programa que imprima a seguinte tabela,
+            // usando fors encadeados:
+            // 1
+            // 2 4
+            // 3 6 9
+            // 4 8 12 16
+            // n n*2 n * 3....n * n
         }
     }
 }
