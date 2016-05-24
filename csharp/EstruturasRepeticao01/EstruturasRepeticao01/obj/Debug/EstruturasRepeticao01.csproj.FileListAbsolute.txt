@@ -7,3 +7,12 @@ A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeti
 A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.csproj.GenerateResource.Cache
 A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.exe
 A:\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.pdb
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\bin\Debug\EstruturasRepeticao01.exe.config
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.exe
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.pdb
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.csprojResolveAssemblyReference.cache
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.Form1.resources
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.Properties.Resources.resources
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\obj\Debug\EstruturasRepeticao01.csproj.GenerateResource.Cache
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\bin\Debug\EstruturasRepeticao01.exe
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturasRepeticao01\EstruturasRepeticao01\bin\Debug\EstruturasRepeticao01.pdb
