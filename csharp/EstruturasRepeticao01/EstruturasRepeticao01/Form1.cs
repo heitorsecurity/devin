@@ -34,7 +34,7 @@ namespace EstruturasRepeticao01
             // Faça um programa em C# que imprima a soma dos números de 1 até 1000.
             int total = 0;
             int totalSoma = 0;
-            for (int i = 0; i <= 1000; i += 1)
+            for (int i = 1; i <= 1000; i += 1)
             {
                 total = total + 1;
                 totalSoma = total + totalSoma;
@@ -47,7 +47,7 @@ namespace EstruturasRepeticao01
             // Faça um programa em C# que imprima todos os múltiplos de 3, entre 1 e 100.
             // Para saber se um número é múltiplo de 3, você pode fazer if(numero % 3 == 0).
             int numero = 0;
-            for (int i = 0; i <= 100; i += 1)
+            for (int i = 1; i <= 100; i += 1)
             {
                 numero = numero + 1;
                 if (numero % 3 == 0)
@@ -65,7 +65,7 @@ namespace EstruturasRepeticao01
             // Qual o resultado?
             int total = 0;
             int numero = 0;
-            for (int i = 0; i <= 100; i += 1)
+            for (int i = 1; i <= 100; i += 1)
             {
                 numero = numero + 1;
                 if (numero % 3 == 1)
@@ -81,6 +81,19 @@ namespace EstruturasRepeticao01
             // (Opcional) Escreva um programa em C# que
             // imprime todos os números que são divisíveis por
             // 3 ou por 4 entre 0 e 30.
+            int numero = 0;
+            for (int i = 0; i <= 30; i += 1)
+            {
+                numero += 1;
+                if (numero % 3 == 0)
+                {
+                    MessageBox.Show("Divisivel por 3: " + numero);
+                }
+                else if (numero % 4 == 0)
+                {
+                    MessageBox.Show("Divisivel por 4: " + numero);
+                }
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

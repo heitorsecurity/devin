@@ -7,3 +7,6 @@ A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle0
 A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.csproj.GenerateResource.Cache
 A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.exe
 A:\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.pdb
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\bin\Debug\EstruturaControle02.exe.config
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.exe
+C:\Users\tmac\Source\Repos\bagunca_aprendendo\csharp\EstruturaControle02\EstruturaControle02\obj\Debug\EstruturaControle02.pdb
