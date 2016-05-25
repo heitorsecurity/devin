@@ -112,6 +112,13 @@ namespace EstruturasRepeticao01
             // {
             // 
             // }
+            int fatorial = 1;
+            int resultado = 0;
+            for (int n = 1;n <= 10; n++)
+            {
+                fatorial = n * (n - 1);
+                MessageBox.Show("Fatorial de " + n + " é " + fatorial);
+            }
     }
 
         private void button7_Click(object sender, EventArgs e)
