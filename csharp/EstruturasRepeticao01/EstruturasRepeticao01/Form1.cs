@@ -116,7 +116,12 @@ namespace EstruturasRepeticao01
             int resultado = 0;
             for (int n = 1;n <= 10; n++)
             {
-                fatorial = n * (n - 1);
+                for(resultado = n; resultado <= n; resultado--)
+                {
+                    int nmenos = (n - 1);
+                    resultado = resultado * nmenos;
+                }
+                fatorial = n * resultado;
                 MessageBox.Show("Fatorial de " + n + " é " + fatorial);
             }
     }
