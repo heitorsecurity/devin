@@ -1,0 +1,10 @@
+'Hello World' == "Hello World" == """Hello World"""
+a1 = "hello".capitalize()
+a2 = "hello".replace("e","a")
+a3 = "hello".isalpha()
+a4 = "123".isdigit()
+
+print(a1)
+print(a2)
+print(a3)
+print(a4)

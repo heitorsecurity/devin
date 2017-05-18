@@ -1,0 +1,7 @@
+answer = 42
+pi = 3.14159
+
+float(answer)
+int(pi)
+
+print(answer + pi)

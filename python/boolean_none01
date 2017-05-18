@@ -1,0 +1,10 @@
+python_course = True
+java_course = False
+aliens_found = None
+
+k2 = int(python_course) == 1
+k1 = int(java_course) == 0
+k2 = str(python_course) == "True"
+
+print(k1)
+print(k2)

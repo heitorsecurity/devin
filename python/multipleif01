@@ -1,0 +1,7 @@
+number = 3
+python_course = True
+if number == 3 and python_course:
+    print("This will execute")
+
+if number == 17 or python_course:
+    print("This will also execute")

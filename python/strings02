@@ -1,0 +1,7 @@
+name = "Python"
+machine = "Tô"
+a1 = "Nice to meet you {0}. I am {1}".format(name, machine)
+print(a1)
+
+f"Nice to meet you {name}. I am {machine}"
+print(a1)
