@@ -1,0 +1,8 @@
+a = 5
+b = 10
+x = a+b
+
+if x == 15:
+    print("X = ", x)
+else:
+    print("Presentation Error")
