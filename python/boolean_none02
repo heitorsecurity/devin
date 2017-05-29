@@ -1,5 +1,5 @@
 python_course = True
-if python_course: # Not python_course == True
+if python_course:  # Not python_course == True
     print("This will execute")
 
 aliens_found = None
