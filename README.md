@@ -1,2 +1,2 @@
-# Bagunça de Código / Lugar para brincadeiras
-Aqui é literalmente uma bagunça. Ache algo útil para você!
+# Testes
+Veja se você aproveita algo.
