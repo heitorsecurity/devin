@@ -1,0 +1,7 @@
+# Teste 01
+
+FizzBuzz I
+- 1 -> 100
+- Caso multiplo 3 -> Fizz
+- Caso multiplo 5 -> Buzz
+- Caso multiplo 3 e 5 -> FizzBuzz

@@ -1,0 +1,19 @@
+Controle de estoque - 3 dias para executar o teste
+
+Fazer um sistema de controle de estoque em PHP.
+
+Tendo em vista as tabelas:
+
+1) Pedido(id_produto, id_cliente)
+2) Cliente(id_cliente,nome,email,telefone)
+3) Produto(id_produto,nome,descrição,preço)
+
+Criar os CRUD do sistema, utilizar o bootstrap como layout - http://getbootstrap.com/getting-started/#examples
+
+Fazer o download do wordpress: https://wordpress.org/download/
+
+Replicar o sistema feito somente em PHP agora no wordpress, utilizando um postType para cada modelo, ou seja, um postType com um customFields para Produto, Cliente, Pedido.
+
+
+Colocar o projeto em seu github, e mandar o link para sua consultoria!
+

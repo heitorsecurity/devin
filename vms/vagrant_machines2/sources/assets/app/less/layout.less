@@ -1,0 +1,33 @@
+@import "mixins/variables";
+
+.container {
+    border:5px @color-teste solid;
+    .row {
+        border: 4px rgba(100, 120, 120, 0.5) solid;
+    }    
+}
+.btn-mois {
+    border: 1px #000 solid;
+    height: 200px;
+    cursor: pointer;
+    &:hover {
+        .mois {
+            display: block;
+            -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    .mois {
+        position: absolute;
+        top: 50px;
+        left: 20%;
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+        opacity: 0;
+        -webkit-transition: all .3s ease-out;
+        transition: all .3s ease-out;
+    }
+}

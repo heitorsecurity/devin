@@ -1,0 +1,10 @@
+CREATE DATABASE  `cadastro`;
+
+CREATE TABLE  `usuarios` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`nome` CHAR( 100 ) NOT NULL ,
+`idade` INT( 100 ) NOT NULL ,
+`rg` INT( 9 ) NOT NULL ,
+`endereco` CHAR( 100 ) NOT NULL ,
+`cep` INT( 8 ) NOT NULL
+) ENGINE = INNODB;

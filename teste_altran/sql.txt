@@ -1,0 +1,18 @@
+CREATE DATABASE estoque;
+
+CREATE TABLE produto (
+	id int(5) not null auto_increment primary key,
+	nome varchar(200) not null,
+	descricao text,
+	preco float(6,2) not null);
+
+CREATE TABLE cliente (
+	id int not null auto_increment primary key,
+	nome varchar(200) not null,
+	email varchar(100) not null,
+	telefone varchar(11) not null);
+
+
+CREATE TABLE pedido (
+	id_produto int(5) not null,
+	id_cliente int(5) not null);

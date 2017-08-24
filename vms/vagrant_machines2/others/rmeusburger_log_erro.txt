@@ -1,0 +1,358 @@
+==> default: Error: Failed to set owner to '0': Operation not permitted - /var/www
+==> default: Error: /Stage[main]/Puphpet_nginx/File[/var/www]/owner: change from www-data to root failed: Failed to set owner to '0': Operation not permitted - /var/www
+==> default: Notice: /Stage[main]/Puphpet_server/Group[www-user]/ensure: created
+==> default: Notice: /Stage[main]/Puphpet_server/Apt::Key[4CBEDD5A]/Apt_key[4CBEDD5A]/ensure: created
+==> default: Notice: /Stage[main]/Puphpet_server/Group[puppet]/ensure: created
+==> default: Notice: /Stage[main]/Puphpet_server/User[nginx]/ensure: created
+==> default: Notice: /Stage[main]/Puphpet_server/User[apache]/ensure: created
+==> default: Notice: /Stage[main]/Puphpet_server/User[httpd]/ensure: created
+==> default: Notice: /Stage[main]/Puphpet_server/User[www-user]/ensure: created
+==> default: Notice: /Stage[main]/Puphpet_server/User[www-data]/shell: shell changed '/usr/sbin/nologin' to '/bin/bash'
+==> default: Notice: /Stage[main]/Puphpet_server/User[www-data]/groups: groups changed '' to 'www-data'
+==> default: Notice: /Stage[main]/Puphpet_nginx/Exec[exec mkdir -p /var/www/html @ key _]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_nginx/File[/var/www/html]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Exec[exec mkdir -p /var/www/html @ key _]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_nginx/File[/var/www/html]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/File[/var/lib/php/session]/owner: owner changed 'root' to 'www-data'
+==> default: Notice: /Stage[main]/Puphpet_php/File[/var/lib/php/session]/group: group changed 'root' to 'www-data'
+==> default: Notice: /Stage[main]/Puphpet_nginx/Exec[exec mkdir -p /var/www/interlabdist.com.br/web/public @ key nxv_m1f7brzw7rkk]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Exec[exec mkdir -p /var/www/interlabdist.com.br/web/public @ key nxv_m1f7brzw7rkk]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/File[/var/www/interlabdist.com.br/web/public]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/File[/var/www/interlabdist.com.br/web/public]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx/Anchor[nginx::begin]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx/Anchor[nginx::begin]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Package/Anchor[nginx::package::begin]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Package/Anchor[nginx::package::begin]: Skipping because of failed dependencies
+==> default: Notice: /Apt_key[Add key: 7BD9BF62 from Apt::Source nginx]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Apt_key[Add key: 7BD9BF62 from Apt::Source nginx]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Package::Debian/Apt::Source[nginx]/Apt::Key[Add key: 7BD9BF62 from Apt::Source nginx]/Anchor[apt_key 7BD9BF62 present]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Package::Debian/Apt::Source[nginx]/Apt::Key[Add key: 7BD9BF62 from Apt::Source nginx]/Anchor[apt_key 7BD9BF62 present]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Package::Debian/Apt::Source[nginx]/File[nginx.list]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Package::Debian/Apt::Source[nginx]/File[nginx.list]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Exec[Set /var/www/html/index.html contents]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Exec[Set /var/www/html/index.html contents]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet::Mysql::Repo/Apt::Ppa[ppa:ondrej/mysql-5.6]/Package[software-properties-common]/ensure: ensure changed 'purged' to 'present'
+==> default: Notice: /Stage[main]/Puphpet_server/Apt::Ppa[ppa:pdoes/ppa]/Exec[add-apt-repository-ppa:pdoes/ppa]/returns: executed successfully
+==> default: Info: /Stage[main]/Puphpet_server/Apt::Ppa[ppa:pdoes/ppa]/Exec[add-apt-repository-ppa:pdoes/ppa]: Scheduling refresh of Exec[apt_update]
+==> default: Notice: /Stage[main]/Puphpet::Php::Repos/Apt::Ppa[ppa:ondrej/php5-5.6]/Exec[add-apt-repository-ppa:ondrej/php5-5.6]/returns: executed successfully
+==> default: 
+==> default: Info: /Stage[main]/Puphpet::Php::Repos/Apt::Ppa[ppa:ondrej/php5-5.6]/Exec[add-apt-repository-ppa:ondrej/php5-5.6]: Scheduling refresh of Exec[apt_update]
+==> default: Notice: /Stage[main]/Puphpet::Mysql::Repo/Apt::Ppa[ppa:ondrej/mysql-5.6]/Exec[add-apt-repository-ppa:ondrej/mysql-5.6]/returns: executed successfully
+==> default: Info: /Stage[main]/Puphpet::Mysql::Repo/Apt::Ppa[ppa:ondrej/mysql-5.6]/Exec[add-apt-repository-ppa:ondrej/mysql-5.6]: Scheduling refresh of Exec[apt_update]
+==> default: Notice: /Stage[main]/Apt::Update/Exec[apt_update]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Apt::Update/Exec[apt_update]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Apt::Update/Exec[apt_update]: Triggered 'refresh' from 3 events
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[build-essential]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[make]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[llvm]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_server/Package[htop]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Php/Package[php]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Php/File[php.conf]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_php/Exec[set php session path owner/group]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[wget]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/listen: 127.0.0.1:9000]/File[/etc/php5/fpm/pool.d/www.conf]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/listen: 127.0.0.1:9000]/File_line[[www]]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[libsqlite3-dev]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Ntp::Install/Package[ntp]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[error_reporting]/Augeas[CUSTOM/error_reporting: -1]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[build-essential]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[make]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[llvm]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_server/Package[htop]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Php/Package[php]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Php/File[php.conf]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_php/Exec[set php session path owner/group]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[wget]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/listen: 127.0.0.1:9000]/File[/etc/php5/fpm/pool.d/www.conf]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/listen: 127.0.0.1:9000]/File_line[[www]]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[libsqlite3-dev]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Ntp::Install/Package[ntp]: Skipping because of failed dependencies
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[error_reporting]/Augeas[CUSTOM/error_reporting: -1]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[libssl-dev]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[libssl-dev]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[session.save_path]/Augeas[CUSTOM/session.save_path: /var/lib/php/session]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[session.save_path]/Augeas[CUSTOM/session.save_path: /var/lib/php/session]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_server/Apt::Ppa[ppa:pdoes/ppa]/Anchor[apt::ppa::ppa:pdoes/ppa]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_server/Apt::Ppa[ppa:pdoes/ppa]/Anchor[apt::ppa::ppa:pdoes/ppa]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_server/Package[augeas-tools]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_server/Package[augeas-tools]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet::Mysql::Repo/Apt::Ppa[ppa:ondrej/mysql-5.6]/Anchor[apt::ppa::ppa:ondrej/mysql-5.6]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet::Mysql::Repo/Apt::Ppa[ppa:ondrej/mysql-5.6]/Anchor[apt::ppa::ppa:ondrej/mysql-5.6]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Client/Anchor[mysql::client::start]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Client/Anchor[mysql::client::start]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Client::Install/Package[mysql_client]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Client::Install/Package[mysql_client]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[date.timezone]/Augeas[CUSTOM/date.timezone: UTC]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[date.timezone]/Augeas[CUSTOM/date.timezone: UTC]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet::Php::Repos/Apt::Ppa[ppa:ondrej/php5-5.6]/Anchor[apt::ppa::ppa:ondrej/php5-5.6]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet::Php::Repos/Apt::Ppa[ppa:ondrej/php5-5.6]/Anchor[apt::ppa::ppa:ondrej/php5-5.6]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Ntp::Config/File[/etc/ntp.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Ntp::Config/File[/etc/ntp.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server/Anchor[mysql::server::start]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server/Anchor[mysql::server::start]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Apt/Anchor[apt::update]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Apt/Anchor[apt::update]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Module[mcrypt]/Php::Module[mcrypt]/Package[PhpModule_mcrypt]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Module[mcrypt]/Php::Module[mcrypt]/Package[PhpModule_mcrypt]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Client/Anchor[mysql::client::end]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Client/Anchor[mysql::client::end]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Firewall::Linux/Package[iptables]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Firewall::Linux/Package[iptables]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/group: www-data]/Augeas[www/group: www-data]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/group: www-data]/Augeas[www/group: www-data]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[zlib1g-dev]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[zlib1g-dev]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/security.limit_extensions: .php]/Augeas[www/security.limit_extensions: .php]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/security.limit_extensions: .php]/Augeas[www/security.limit_extensions: .php]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Ini[pid: /run/php-fpm.pid]/Augeas[global/pid: /run/php-fpm.pid]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Ini[pid: /run/php-fpm.pid]/Augeas[global/pid: /run/php-fpm.pid]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server::Install/Package[mysql-server]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server::Install/Package[mysql-server]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server::Install/Exec[mysql_install_db]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server::Install/Exec[mysql_install_db]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server::Config/File[mysql-config-file]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server::Config/File[mysql-config-file]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[display_errors]/Augeas[CUSTOM/display_errors: On]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[display_errors]/Augeas[CUSTOM/display_errors: On]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_server/Package[vim]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_server/Package[vim]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Ini[error_log: /var/log/php-fpm.log]/Augeas[global/error_log: /var/log/php-fpm.log]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Ini[error_log: /var/log/php-fpm.log]/Augeas[global/error_log: /var/log/php-fpm.log]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_mysql/Puphpet::Php::Module[mysqlnd]/Php::Module[mysqlnd]/Package[PhpModule_mysqlnd]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_mysql/Puphpet::Php::Module[mysqlnd]/Php::Module[mysqlnd]/Package[PhpModule_mysqlnd]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Ntp::Service/Service[ntp]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Ntp::Service/Service[ntp]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/listen: 127.0.0.1:9000]/Augeas[www/listen: 127.0.0.1:9000]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/listen: 127.0.0.1:9000]/Augeas[www/listen: 127.0.0.1:9000]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet::Ssl_cert/Package[ssl-cert]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet::Ssl_cert/Package[ssl-cert]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet::Ssl_cert/Exec[make-ssl-cert generate-default-snakeoil --force-overwrite]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet::Ssl_cert/Exec[make-ssl-cert generate-default-snakeoil --force-overwrite]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments.concat.out]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments.concat.out]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments.concat.out]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments.concat.out]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments.concat]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments.concat]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat::Fragment[nxv_m1f7brzw7rkk-footer]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments/699_nxv_m1f7brzw7rkk-footer]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat::Fragment[nxv_m1f7brzw7rkk-footer]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments/699_nxv_m1f7brzw7rkk-footer]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[nxvl_y8mcilpjfq7b]/Concat::Fragment[722d14da91c2570a16d04808189c216b]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments/500_722d14da91c2570a16d04808189c216b]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[nxvl_y8mcilpjfq7b]/Concat::Fragment[722d14da91c2570a16d04808189c216b]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments/500_722d14da91c2570a16d04808189c216b]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat::Fragment[nxv_m1f7brzw7rkk-header]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments/001_nxv_m1f7brzw7rkk-header]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat::Fragment[nxv_m1f7brzw7rkk-header]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments/001_nxv_m1f7brzw7rkk-header]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Ntp/Anchor[ntp::end]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Ntp/Anchor[ntp::end]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Package::Debian/Apt::Source[nginx]/Anchor[apt::source::nginx]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Package::Debian/Apt::Source[nginx]/Anchor[apt::source::nginx]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Package::Debian/Exec[apt_get_update_for_nginx]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Package::Debian/Exec[apt_get_update_for_nginx]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Package::Debian/Anchor[nginx::apt_repo]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Package::Debian/Anchor[nginx::apt_repo]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Package::Debian/Package[nginx]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Package::Debian/Package[nginx]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Package/Anchor[nginx::package::end]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Package/Anchor[nginx::package::end]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/tmp/nginx.d]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/tmp/nginx.d]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/var/nginx]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/var/nginx]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/var/nginx/client_body_temp]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/var/nginx/client_body_temp]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/tmp/nginx.mail.d]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/tmp/nginx.mail.d]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/Augeas[CUSTOM/cgi.fix_pathinfo: 1]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/Augeas[CUSTOM/cgi.fix_pathinfo: 1]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/user: www-user]/Augeas[www/user: www-user]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Fpm::Pool_ini[www/user: www-user]/Augeas[www/user: www-user]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments.concat]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments.concat]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/var/nginx/proxy_temp]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/var/nginx/proxy_temp]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[libbz2-dev]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[libbz2-dev]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat::Fragment[_-footer]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments/699__-footer]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat::Fragment[_-footer]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments/699__-footer]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat::Fragment[_-header]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments/001__-header]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat::Fragment[_-header]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments/001__-header]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server::Config/File[/etc/mysql/conf.d]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server::Config/File[/etc/mysql/conf.d]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server::Service/Service[mysqld]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server::Service/Service[mysqld]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server::Service/File[/var/log/mysql/error.log]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server::Service/File[/var/log/mysql/error.log]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Firewall::Linux::Debian/Package[iptables-persistent]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Firewall::Linux::Debian/Package[iptables-persistent]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Firewall::Linux::Debian/Service[iptables-persistent]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Firewall::Linux::Debian/Service[iptables-persistent]: Skipping because of failed dependencies
+==> default: Notice: /Firewall[000 accept all icmp]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Firewall[000 accept all icmp]: Skipping because of failed dependencies
+==> default: Notice: /Firewall[100 tcp/80]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Firewall[100 tcp/80]: Skipping because of failed dependencies
+==> default: Notice: /Firewall[100 tcp/443]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Firewall[100 tcp/443]: Skipping because of failed dependencies
+==> default: Notice: /Firewall[001 accept all to lo interface]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Firewall[001 accept all to lo interface]: Skipping because of failed dependencies
+==> default: Notice: /Firewall[002 accept related established rules]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Firewall[002 accept related established rules]: Skipping because of failed dependencies
+==> default: Notice: /Firewall[100 tcp/22]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Firewall[100 tcp/22]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[libreadline-dev]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_python/Puphpet::Python::Preinstall[foo]/Package[libreadline-dev]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/nginx.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/nginx.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.mail.d]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.mail.d]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.mail.d/vhost_autogen.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.mail.d/vhost_autogen.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/sites-enabled]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/sites-enabled]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/sites-enabled/default]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/sites-enabled/default]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/sites-available]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/sites-available]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Install/Package[supervisor]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Install/Package[supervisor]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/File[/var/log/supervisor]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/File[/var/log/supervisor]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/File[/etc/default/supervisor]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/File[/etc/default/supervisor]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/File[/etc/init.d/supervisord]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/File[/etc/init.d/supervisord]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/File[/etc/supervisor.d]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/File[/etc/supervisor.d]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/var/lib/puppet/concat/_etc_supervisord.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/var/lib/puppet/concat/_etc_supervisord.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/Concat::Fragment[supervisord_main]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments/02_supervisord_main]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/Concat::Fragment[supervisord_main]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments/02_supervisord_main]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments.concat.out]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments.concat.out]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments.concat]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments.concat]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/Concat::Fragment[supervisord_unix]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments/01_supervisord_unix]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/Concat::Fragment[supervisord_unix]/File[/var/lib/puppet/concat/_etc_supervisord.conf/fragments/01_supervisord_unix]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/Exec[concat_/etc/supervisord.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/Exec[concat_/etc/supervisord.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/etc/supervisord.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Config/Concat[/etc/supervisord.conf]/File[/etc/supervisord.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Service/Service[supervisord]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Service/Service[supervisord]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Reload/Exec[supervisorctl_reread]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Reload/Exec[supervisorctl_reread]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Supervisord::Reload/Exec[supervisorctl_update]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Supervisord::Reload/Exec[supervisorctl_update]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[0]/Concat::Fragment[46e313d83b3a2eb96849fe05ae393e79]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments/500_46e313d83b3a2eb96849fe05ae393e79]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[0]/Concat::Fragment[46e313d83b3a2eb96849fe05ae393e79]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments/500_46e313d83b3a2eb96849fe05ae393e79]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Module[intl]/Php::Module[intl]/Package[PhpModule_intl]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Module[intl]/Php::Module[intl]/Package[PhpModule_intl]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Service[php5-fpm]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Service[php5-fpm]: Skipping because of failed dependencies
+==> default: Error: /Stage[main]/Puphpet_php/Service[php5-fpm]: Failed to call refresh: Could not find init script or upstart conf file for 'php5-fpm'
+==> default: Error: /Stage[main]/Puphpet_php/Service[php5-fpm]: Could not find init script or upstart conf file for 'php5-fpm'
+==> default: Notice: /Stage[main]/Swap_file/Exec[Create swap file]/returns: executed successfully
+==> default: Notice: /Stage[main]/Swap_file/Exec[Attach swap file]/returns: executed successfully
+==> default: Notice: /Stage[main]/Puphpet_server/User[vagrant]/groups: groups changed 'adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare' to 'adm,cdrom,dip,lpadmin,plugdev,rvm,sambashare,sudo,www-data,www-user'
+==> default: Notice: /Stage[main]/Puphpet_server/Exec[dotfiles]/returns: executed successfully
+==> default: Notice: /Stage[main]/Git/Package[git]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Git/Package[git]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Pyenv/Vcsrepo[/usr/local/pyenv]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Pyenv/Vcsrepo[/usr/local/pyenv]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Composer/File[/usr/local/bin]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Composer/File[/usr/local/bin]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Composer/Package[curl]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Composer/Package[curl]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Pyenv/File[/usr/local/bin/pyenv]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Pyenv/File[/usr/local/bin/pyenv]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Composer/Package[php5-cli]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Composer/Package[php5-cli]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Composer/Exec[download_composer]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Composer/Exec[download_composer]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Composer/File[/usr/local/bin/composer]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Composer/File[/usr/local/bin/composer]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[nxvl_srsaorgvwrpb]/File[/etc/nginx/fastcgi_params]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[nxvl_srsaorgvwrpb]/File[/etc/nginx/fastcgi_params]: Skipping because of failed dependencies
+==> default: Notice: /Firewall[999 drop all]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Firewall[999 drop all]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Locales/Package[libc-bin]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Locales/Package[libc-bin]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Locales/Package[locales]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Locales/Package[locales]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Locales/File[/var/lib/locales/supported.d/local]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Locales/File[/var/lib/locales/supported.d/local]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Locales/Exec[locale-gen]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Locales/Exec[locale-gen]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Locales/File[/etc/default/locale]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Locales/File[/etc/default/locale]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Locales/Exec[update-locale]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Locales/Exec[update-locale]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d/proxy.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d/proxy.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d/example_ssl.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d/example_ssl.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d/vhost_autogen.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d/vhost_autogen.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[1]/Concat::Fragment[6bba1c0e224da60a4b71285164cd3b6f]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments/500_6bba1c0e224da60a4b71285164cd3b6f]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[1]/Concat::Fragment[6bba1c0e224da60a4b71285164cd3b6f]/File[/var/lib/puppet/concat/_etc_nginx_sites-available__.conf/fragments/500_6bba1c0e224da60a4b71285164cd3b6f]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/Exec[concat_/etc/nginx/sites-available/_.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/Exec[concat_/etc/nginx/sites-available/_.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/etc/nginx/sites-available/_.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/Concat[/etc/nginx/sites-available/_.conf]/File[/etc/nginx/sites-available/_.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/File[_.conf symlink]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[_]/File[_.conf symlink]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d/default.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Config/File[/etc/nginx/conf.d/default.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[nxvl_srsaorgvwrpb]/Concat::Fragment[4dd2bf29e41665129c45766449dd913b]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments/500_4dd2bf29e41665129c45766449dd913b]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Location[nxvl_srsaorgvwrpb]/Concat::Fragment[4dd2bf29e41665129c45766449dd913b]/File[/var/lib/puppet/concat/_etc_nginx_sites-available_nxv_m1f7brzw7rkk.conf/fragments/500_4dd2bf29e41665129c45766449dd913b]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/Exec[concat_/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/Exec[concat_/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/Concat[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]/File[/etc/nginx/sites-available/nxv_m1f7brzw7rkk.conf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/File[nxv_m1f7brzw7rkk.conf symlink]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_nginx/Nginx::Resource::Vhost[nxv_m1f7brzw7rkk]/File[nxv_m1f7brzw7rkk.conf symlink]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx::Service/Service[nginx]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx::Service/Service[nginx]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Nginx/Anchor[nginx::end]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Nginx/Anchor[nginx::end]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/File[/etc/php5/mods-available/zzzz_custom.ini]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/File[/etc/php5/mods-available/zzzz_custom.ini]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/File[/etc/php5/fpm/conf.d/zzzz_custom.ini]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/File[/etc/php5/fpm/conf.d/zzzz_custom.ini]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/File[/etc/php5/cli/conf.d/zzzz_custom.ini]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/File[/etc/php5/cli/conf.d/zzzz_custom.ini]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/File[/etc/php5/conf.d]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_php/Puphpet::Php::Ini[cgi.fix_pathinfo]/File[/etc/php5/conf.d]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Php::Devel/Package[php5-dev]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Php::Devel/Package[php5-dev]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server::Root_password/File[/root/.my.cnf]: Dependency Mysql_user[root@localhost] has failures: true
+==> default: Notice: /Stage[main]/Mysql::Server::Root_password/File[/root/.my.cnf]: Dependency File[/var/www] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server::Root_password/File[/root/.my.cnf]: Skipping because of failed dependencies
+==> default: Notice: /Stage[main]/Mysql::Server/Anchor[mysql::server::end]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Mysql::Server/Anchor[mysql::server::end]: Dependency Mysql_user[root@localhost] has failures: true
+==> default: Warning: /Stage[main]/Mysql::Server/Anchor[mysql::server::end]: Skipping because of failed dependencies
+==> default: Error: Could not prefetch mysql_grant provider 'mysql': Command mysql is missing
+==> default: Notice: /Stage[main]/Puphpet_mysql/Mysql_grant[dbuser@localhost/*.*]: Dependency Mysql_database[dbname] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_mysql/Mysql_grant[dbuser@localhost/*.*]: Dependency Mysql_user[root@localhost] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_mysql/Mysql_grant[dbuser@localhost/*.*]: Dependency File[/var/www] has failures: true
+==> default: Notice: /Stage[main]/Puphpet_mysql/Mysql_grant[dbuser@localhost/*.*]: Dependency Mysql_user[dbuser@localhost] has failures: true
+==> default: Warning: /Stage[main]/Puphpet_mysql/Mysql_grant[dbuser@localhost/*.*]: Skipping because of failed dependencies
+==> default: Error: Could not find a suitable provider for mysql_user
+==> default: Error: Could not find a suitable provider for mysql_database
+==> default: Info: Creating state file /var/lib/puppet/state/state.yaml
+==> default: Notice: Finished catalog run in 89.94 seconds
+The SSH command responded with a non-zero exit status. Vagrant
+assumes that this means the command failed. The output for this command
+should be in the log above. Please read the output to determine what
+went wrong.

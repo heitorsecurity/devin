@@ -1,0 +1,6 @@
+c:\users\heitor.trsouza1\documents\visual studio 2013\Projects\CSharpHelloWorld\CSharpHelloWorld\bin\Debug\CSharpHelloWorld.exe.config
+c:\users\heitor.trsouza1\documents\visual studio 2013\Projects\CSharpHelloWorld\CSharpHelloWorld\bin\Debug\CSharpHelloWorld.exe
+c:\users\heitor.trsouza1\documents\visual studio 2013\Projects\CSharpHelloWorld\CSharpHelloWorld\bin\Debug\CSharpHelloWorld.pdb
+c:\users\heitor.trsouza1\documents\visual studio 2013\Projects\CSharpHelloWorld\CSharpHelloWorld\obj\Debug\CSharpHelloWorld.csprojResolveAssemblyReference.cache
+c:\users\heitor.trsouza1\documents\visual studio 2013\Projects\CSharpHelloWorld\CSharpHelloWorld\obj\Debug\CSharpHelloWorld.exe
+c:\users\heitor.trsouza1\documents\visual studio 2013\Projects\CSharpHelloWorld\CSharpHelloWorld\obj\Debug\CSharpHelloWorld.pdb

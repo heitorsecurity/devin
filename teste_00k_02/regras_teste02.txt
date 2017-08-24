@@ -1,0 +1,29 @@
+# Teste 02
+
+Elevador 3
+- Simular um elevador simples de 50 andares
+- 5 pessoas nascem em andares randomicamente
+// Elas selecionam a opção <Subir> ou <Descer> randomicamente
+- O elevador deve obedecer fluxo de chamadas
+- Andar 1 andar por segundo
+*- Todos os 5 passageiros vao para o térreo
+
+--
+
+Elevator 3 Problem
+
+Elevator 3
+- Simulate an simple elevator with 50 floors
+- 5 people born in floors randomly
+// Randomly they select the option if they want to go Up or Down
+- The elevator must obey the flux of the calls
+- Walk one floor per second
+*- All 5 people go to the floor
+
+--
+//pular passo/jump step
+*adicionado/added
+*Nova forma para fazer by @meusburger
+
+eu tenho 5 chamadas aleatórias de andares do 1 ao 50
+e o elevador tem que subir ou descer conforme o cara que chamou
